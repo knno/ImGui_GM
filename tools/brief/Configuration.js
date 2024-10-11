@@ -18,6 +18,20 @@ class Configuration {
     static PROGRAM_NAME = "brief";
 
     /**
+     * @description Suppress warning types in Logger.js
+     * 
+     * Examples:
+     *      true
+     *      ["W001", "H002",]
+     *      "W*"
+     */
+    static LOGGER_IGNORE_WARNS = [
+        "H000",
+        "W001",
+        "W002",
+    ];
+
+    /**
      * @description If true, FileEditor will write changes to files with ".test" appended to their filename
      */
     static USE_TEST = false;
@@ -30,7 +44,7 @@ class Configuration {
     /**
      * @description Spacing character used for writing generated code
      */
-    static SPACING = "	";
+    static SPACING = "    ";
 
     /**
      * @description If true, scanner class will retain "Semicolon" tokens
@@ -47,6 +61,11 @@ class Configuration {
      * @description Keyword/macro used for marking wrapper functions
      */
     static WRAPPER_DEF = "GMFUNC";
+
+    /**
+     * @description Prefix of constructors in GML for ImGui extensions (ImExt)
+     */
+    static IMEXT_PREFIX = "ImExt";
 
     /**
      * @description If true, GML writer will call forceinline for each static method

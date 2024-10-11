@@ -3,8 +3,8 @@
   "%Name":"shdImGui",
   "name":"shdImGui",
   "parent":{
-    "name":"ImGui_GM",
-    "path":"folders/ImGui_GM.yy",
+    "name":"Main",
+    "path":"folders/ImGui_GM/Main.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",

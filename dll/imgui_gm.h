@@ -1,5 +1,8 @@
 #pragma once
+#pragma warning( disable : 4244)
 #include <stddef.h>
+#include <d3d11.h>
+#include <vector>
 #include "Extension_Interface.h"
 #include "YYRValue.h"
 
@@ -8,8 +11,7 @@
 #include "imgui_impl_gm.h"
 #include "imgui/imgui_impl_dx11.h"
 #include "imgui/imgui_impl_win32.h"
-#include <d3d11.h>
-#include <vector>
+#include "imext/config.h"
 
 // Modifiers for brief (see Wrapper.js)
 #define GMDEFAULT(...) /**/
@@ -130,27 +132,27 @@ enum TextureType : char {
 	TextureType_Font = 1 << 2
 };
 
-typedef int ImGuiExtFlags;
+typedef int ImGuiGFlags;
 
-enum ImGuiExtFlags_ {
-	ImGuiExtFlags_None = 0,
-	ImGuiExtFlags_RENDERER_GM = 1 << 0,
-	ImGuiExtFlags_IMPL_GM = 1 << 1,
-	ImGuiExtFlags_IMPL_DX11 = 1 << 2,
-	ImGuiExtFlags_IMPL_WIN32 = 1 << 3,
-	ImGuiExtFlags_GM = ImGuiExtFlags_RENDERER_GM | ImGuiExtFlags_IMPL_GM,
+enum ImGuiGFlags_ {
+	ImGuiGFlags_None = 0,
+	ImGuiGFlags_RENDERER_GM = 1 << 0,
+	ImGuiGFlags_IMPL_GM = 1 << 1,
+	ImGuiGFlags_IMPL_DX11 = 1 << 2,
+	ImGuiGFlags_IMPL_WIN32 = 1 << 3,
+	ImGuiGFlags_GM = ImGuiGFlags_RENDERER_GM | ImGuiGFlags_IMPL_GM,
 };
 
-extern ImGuiExtFlags g_ImGuiExtFlags;
+extern ImGuiGFlags g_ImGuiGFlags;
 extern ID3D11Device* g_pd3dDevice;
 extern ID3D11DeviceContext* g_pd3dDeviceContext;
 extern ID3D11ShaderResourceView* g_pView;
 
 inline ImTextureID GetTexture(int id, int subimg, TextureType type) {
-	if (g_ImGuiExtFlags & ImGuiExtFlags_RENDERER_GM) {
-		return (ImTextureID)(((((uintptr_t)subimg << 8) | (uintptr_t )id) << 4) | (uintptr_t)type);
+	if (g_ImGuiGFlags & ImGuiGFlags_RENDERER_GM) {
+		return (ImTextureID)(((((uintptr_t)id << 12) | (uintptr_t)subimg) << 4) | (uintptr_t)type);
 	}
 	g_pd3dDeviceContext->PSGetShaderResources(0, 1, &g_pView);
 	g_pd3dDeviceContext->VSSetShaderResources(0, 1, &g_pView);
-	return g_pView;
+	return (ImTextureID)g_pView;
 }

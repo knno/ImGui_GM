@@ -1,6 +1,6 @@
 {
-    "Base": "packaged/imgui_gm_v1_1_0.yymps",
-    "Output": "bundle/",
+    "Base": "packaged/imgui_gm_v1_1_0_vanilla.yymps",
+    "Output": "vanilla/",
     "Import": [
         "ImGui_GM.yyp",
         "metadata.json"
@@ -10,11 +10,12 @@
         "Version": "1.1.1"
     },
     "Include": [
-        "scripts/**/*.*",
+        "scripts/ImGui*/*.*",
         "extensions/**/*.*",
         "objects/**/*.*"
     ],
     "Replace": {
+        "/^([\\s]*)(\\/{3} @section Extensions)\\n(.*)(\\t)(\\/{3}\\s*EndSection Extensions)/": "$1$2\n$1static Ext = {};\n$4$5",
         "${VersionBase}": "${Version}"
     }
 }

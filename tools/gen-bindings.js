@@ -124,7 +124,7 @@ try {
                 if (ind === -1) {
                     continue;
                 }
-                
+
                 let start = line.indexOf("(", ind);
                 let end = line.indexOf(")", ind);
                 if (start === -1 || end === -1) throw `Could not get arguments for YYGet call at line ${j + 1}`;
@@ -190,7 +190,7 @@ try {
                             break;
                         }
                     }
-                    
+
                 }
 
                 args[arg_ind] = {
@@ -228,7 +228,7 @@ try {
                     const line = wrappers[j].trim();
                     const ind = line.indexOf("ImGui::");
                     if (ind === -1 || line.startsWith("//")) continue;
-    
+
                     const start = ind + 7; // ImGui::.length
                     const end = line.indexOf("(", start);
                     if (end == -1) throw `Could not find end of ImGui:: call at line ${j + 1}`;
@@ -236,8 +236,8 @@ try {
                 }
                 if (!call) throw `Could not find call to ImGui function in GMFUNC at line ${i + 1}`;
             }
-            
-            
+
+
             console.log(`Found ${name} with ${args.length} arguments at line ${i + 1} (ImGui::${call})`);
             found.push({
                 Name: name,
@@ -295,7 +295,7 @@ try {
             fs.writeFileSync(input[1] + (USE_TEST ? ".test" : ""), resources_write.join("\n"));
             break;
         }
-        
+
         // ImGui.gml
         // Creates binding functions for ImGui struct in @section Binds
         const binds = content[2], sections = [];
@@ -318,7 +318,7 @@ try {
                 End: -1
             };
         }
-        
+
         if (current_section) {
             if (current_section.End === -1) current_section.End = binds.length;
             sections.push(current_section);
@@ -328,7 +328,7 @@ try {
 
         const section = sections.find(e => e.Name.toLowerCase() === "binds");
         if (!section) throw `Could not update ImGui.gml, could not find "Binds" section`;
-        
+
         let binds_content = [];
         found.forEach(func => {
             let line = [], args = func.Arguments;

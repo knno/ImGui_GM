@@ -12,6 +12,9 @@
   "Folders":[
     {"$GMFolder":"","%Name":"Example","folderPath":"folders/Example.yy","name":"Example","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"ImGui_GM","folderPath":"folders/ImGui_GM.yy","name":"ImGui_GM","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/ImGui_GM/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"ImExt","folderPath":"folders/ImGui_GM/Extensions/ImExt.yy","name":"ImExt","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Main","folderPath":"folders/ImGui_GM/Main.yy","name":"Main","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"LICENSE.txt","CopyToMask":-1,"filePath":"datafiles/fonts","name":"LICENSE.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -20,7 +23,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"ImGui_GM",
   "resources":[
