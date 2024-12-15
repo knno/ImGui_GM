@@ -1,7 +1,7 @@
 /**
 *  This script includes snake_case function defintions for ImGui_GM, as an alternative to the namespaced convention
 *  To use, just drop this script into your project with ImGui_GM
-*  Generated at 10/16/2024, 1:53:43 PM
+*  Generated at 12/15/2024, 1:04:41 AM
 */
 
 /// @function imgui_initialize
@@ -3051,11 +3051,12 @@ function imgui_invisible_button(_id, width=0, height=0, flags=ImGuiButtonFlags.N
 	return __imgui_invisible_button(_id, width, height, flags);
 }
 
-/// @function imgui_arrow_button(str_id)
+/// @function imgui_arrow_button(str_id, dir)
 /// @argument {String} str_id
+/// @argument {Real} dir
 /// @return {Bool}
-function imgui_arrow_button(str_id) {
-	return __imgui_arrow_button(str_id);
+function imgui_arrow_button(str_id, dir) {
+	return __imgui_arrow_button(str_id, dir);
 }
 
 /// @function imgui_image(sprite, subimg, color, alpha, width, height)

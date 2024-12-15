@@ -4,9 +4,9 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 # Coverage
 
 - ![coverage](https://badgen.net/https/raw.githubusercontent.com/nommiin/ImGui_GM/main/extra/badges/coverage.json?icon=awesome)
-- 360 out of 393 supported API functions wrapped (**92% complete**)
-- 360 out of 408 total API functions wrapped (*88% complete*)
-- Note that 15 out of 408 API functions are not supported (4%)
+- 360 out of 394 supported API functions wrapped (**91% complete**)
+- 360 out of 409 total API functions wrapped (*88% complete*)
+- Note that 15 out of 409 API functions are not supported (4%)
 
 | Function | Wrapped | Link | Notes |
 | -------- | ------- | ---- | ----- |
@@ -139,15 +139,15 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 | `ImGui::SmallButton` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L18) | N/A |
 | `ImGui::InvisibleButton` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L25) | N/A |
 | `ImGui::ArrowButton` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L38) | N/A |
-| `ImGui::Checkbox` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L110) | N/A |
-| `ImGui::CheckboxFlags` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L119) | N/A |
-| `ImGui::RadioButton` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L129) | N/A |
-| `ImGui::ProgressBar` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L137) | N/A |
-| `ImGui::Bullet` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L150) | N/A |
-| `ImGui::TextLink` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L155) | N/A |
-| `ImGui::TextLinkOpenURL` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L163) | N/A |
-| `ImGui::Image` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L46) | N/A |
-| `ImGui::ImageButton` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L67) | N/A |
+| `ImGui::Checkbox` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L111) | N/A |
+| `ImGui::CheckboxFlags` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L120) | N/A |
+| `ImGui::RadioButton` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L130) | N/A |
+| `ImGui::ProgressBar` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L138) | N/A |
+| `ImGui::Bullet` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L151) | N/A |
+| `ImGui::TextLink` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L156) | N/A |
+| `ImGui::TextLinkOpenURL` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L164) | N/A |
+| `ImGui::Image` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L47) | N/A |
+| `ImGui::ImageButton` | ✅ | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_widgets_gm.cpp#L68) | N/A |
 | `ImGui::BeginCombo` | ✅ | [imgui_combo_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_combo_gm.cpp#L3) | N/A |
 | `ImGui::EndCombo` | ✅ | [imgui_combo_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_combo_gm.cpp#L12) | N/A |
 | `ImGui::Combo` | ✅ | [imgui_combo_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_combo_gm.cpp#L17) | N/A |
@@ -301,6 +301,7 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 | `ImGui::PopClipRect` | ✅ | [imgui_layout_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_layout_gm.cpp#L271) | N/A |
 | `ImGui::SetItemDefaultFocus` | ✅ | [imgui_api_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L408) | N/A |
 | `ImGui::SetKeyboardFocusHere` | ✅ | [imgui_api_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L388) | N/A |
+| `ImGui::SetNavCursorVisible` | ❌ | N/A | N/A |
 | `ImGui::SetNextItemAllowOverlap` | ✅ | [imgui_api_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L316) | N/A |
 | `ImGui::IsItemHovered` | ✅ | [imgui_api_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L198) | N/A |
 | `ImGui::IsItemActive` | ✅ | [imgui_api_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L206) | N/A |
@@ -496,7 +497,7 @@ Below is a table of non-standard functions made specifically for ImGui_GM
 | `ImGui.GetStyleColor(idx)` | [imgui_style_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/imgui_style_gm.cpp#L79) |
 | `ImGui.SetStyleColor(idx, col, alpha)` | [imgui_style_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/imgui_style_gm.cpp#L94) |
 | `ImGui.SetStyleVar(idx, val, val2)` | [imgui_style_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/imgui_style_gm.cpp#L107) |
-| `ImGui.Surface(surface, color, alpha, width, height, uv)` | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/imgui_widgets_gm.cpp#L89) |
+| `ImGui.Surface(surface, color, alpha, width, height, uv)` | [imgui_widgets_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/imgui_widgets_gm.cpp#L90) |
 | `ImGui.BeginChildFrame(_id, width, height, flags)` | [imgui_window_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/imgui_window_gm.cpp#L49) |
 | `ImGui.EndChildFrame()` | [imgui_window_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/imgui_window_gm.cpp#L62) |
 | `ImGui.GetWindowPosX()` | [imgui_window_gm.cpp](https://github.com/nommiin/ImGui_GM/blob/main/dll/imgui_window_gm.cpp#L98) |

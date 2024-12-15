@@ -37,10 +37,11 @@ GMFUNC(__imgui_invisible_button) {
 
 GMFUNC(__imgui_arrow_button) {
 	const char* str_id = YYGetString(arg, 0);
-	ImGuiDir dir = (ImGuiDir)(YYGetInt64(arg, 1));
+	int dir = YYGetInt64(arg, 1);
+	ImGuiDir final_dir = (ImGuiDir)(dir);
 	
 	Result.kind = VALUE_BOOL;
-	Result.val = ImGui::ArrowButton(str_id, dir);
+	Result.val = ImGui::ArrowButton(str_id, final_dir);
 }
 
 GMFUNC(__imgui_image) {

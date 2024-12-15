@@ -3369,12 +3369,13 @@ function ImGui() constructor {
 		return __imgui_invisible_button(_id, width, height, flags);
 	}
 
-	/// @function ArrowButton(str_id)
+	/// @function ArrowButton(str_id, dir)
 	/// @argument {String} str_id
+	/// @argument {Real} dir
 	/// @context ImGui
 	/// @return {Bool}
-	static ArrowButton = function(str_id) {
-		return __imgui_arrow_button(str_id);
+	static ArrowButton = function(str_id, dir) {
+		return __imgui_arrow_button(str_id, dir);
 	}
 
 	/// @function Image(sprite, subimg, color, alpha, width, height)
@@ -3907,12 +3908,13 @@ function ImGui() constructor {
 		DisplayEmptyRefVal = 1 << 14,
 		NoHorizontalScroll = 1 << 15,
 		NoUndoRedo = 1 << 16,
-		CallbackCompletion = 1 << 17,
-		CallbackHistory = 1 << 18,
-		CallbackAlways = 1 << 19,
-		CallbackCharFilter = 1 << 20,
-		CallbackResize = 1 << 21,
-		CallbackEdit = 1 << 22,
+		ElideLeft = 1 << 17,
+		CallbackCompletion = 1 << 18,
+		CallbackHistory = 1 << 19,
+		CallbackAlways = 1 << 20,
+		CallbackCharFilter = 1 << 21,
+		CallbackResize = 1 << 22,
+		CallbackEdit = 1 << 23,
 	}
 
 	enum ImGuiTreeNodeFlags {
@@ -4103,26 +4105,6 @@ function ImGui() constructor {
 		Tooltip = 1 << 18,
 	}
 
-	enum ImGuiNavInput {
-		Activate,
-		Cancel,
-		Input,
-		Menu,
-		DpadLeft,
-		DpadRight,
-		DpadUp,
-		DpadDown,
-		LStickLeft,
-		LStickRight,
-		LStickUp,
-		LStickDown,
-		FocusPrev,
-		FocusNext,
-		TweakSlow,
-		TweakFast,
-		COUNT,
-	}
-
 	enum ImGuiConfigFlags {
 		None = 0,
 		NavEnableKeyboard = 1 << 0,
@@ -4206,7 +4188,7 @@ function ImGui() constructor {
 		TextLink,
 		TextSelectedBg,
 		DragDropTarget,
-		NavHighlight,
+		NavCursor,
 		NavWindowingHighlight,
 		NavWindowingDimBg,
 		ModalWindowDimBg,
@@ -4214,6 +4196,7 @@ function ImGui() constructor {
 		TabActive = ImGuiCol.TabSelected,
 		TabUnfocused = ImGuiCol.TabDimmed,
 		TabUnfocusedActive = ImGuiCol.TabDimmedSelected,
+		NavHighlight = ImGuiCol.NavCursor,
 	}
 
 	enum ImGuiStyleVar {
@@ -4259,6 +4242,7 @@ function ImGui() constructor {
 		MouseButtonRight = 1 << 1,
 		MouseButtonMiddle = 1 << 2,
 		MouseButtonMask_ = ImGuiButtonFlags.MouseButtonLeft | ImGuiButtonFlags.MouseButtonRight | ImGuiButtonFlags.MouseButtonMiddle,
+		EnableNav = 1 << 3,
 	}
 
 	enum ImGuiColorEditFlags {
