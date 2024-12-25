@@ -2,9 +2,10 @@
 
 ImGui wrapper for modern GameMaker.
 
-[wiki](https://github.com/knno/imgui_gm/wiki)
 ![issues](https://badgen.net/github/open-issues/knno/imgui_gm)
 ![coverage](https://badgen.net/https/raw.githubusercontent.com/knno/imgui_gm/main/extra/badges/coverage.json?icon=awesome)
+
+Check the [Wiki](https://github.com/knno/imgui_gm/wiki) for more info!
 
 # Features
 - Latest ImGui version
