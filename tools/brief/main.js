@@ -18,7 +18,7 @@ try {
     }
     Logger.info(`Script execution completed successfully in ${Math.round(performance.now() - start)}ms`);
 } catch (e) {
-    Logger.error(`An error has occured:\n- ${e}`);
+    Logger.error(`${e}\n${e.stack}`);
     process.exit(1);
 }
 process.exit(0);

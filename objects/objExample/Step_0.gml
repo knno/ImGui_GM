@@ -72,7 +72,7 @@ ImGui.EndMainMenuBar();
 var base_x = 0;
 var base_y = 0;
 // Positions are relative to monitor top-left, if not using GM renderer.
-if (ImGui.__ExtFlags & ImGuiExtFlags.GM == 0) { 
+if (ImGui.__GFlags & ImGuiGFlags.GM == 0) { 
     base_x = window_get_x();
     base_y = window_get_y();
 }
@@ -107,7 +107,7 @@ if (!init) {
 	ImGui.DockBuilderDockWindow("Two", dock2);
 	ImGui.DockBuilderDockWindow("Three", dock3);
 	ImGui.DockBuilderFinish(node_id);
-	init = true;	
+	init = true;
 }
 
 // Main Window
@@ -132,9 +132,11 @@ if (main_open) {
 			}
 			ImGui.TextColored("Developed by Nommiin!", c_aqua);
             ImGui.Separator();
+			ImGui.TextColored("Improved by knno", #3bb1f8);
+            ImGui.Separator();
 			ImGui.TextColored("Source URL: ", #3bb1f8);
             ImGui.SameLine(0,0);
-            ImGui.TextLinkOpenURL("nommiin/ImGui_GM", "https://github.com/nommiin/ImGui_GM");
+            ImGui.TextLinkOpenURL("knno/ImGui_GM", "https://github.com/knno/ImGui_GM");
             ImGui.Separator();
 			if (!is_undefined(_static)) {
                 _static.__State.Display.Scale = max(0.5, ImGui.InputDouble("Scale", _static.__State.Display.Scale, 0.1, 0.25));
@@ -192,14 +194,16 @@ if (main_open) {
 			}
 			
 			ImGui.Text("ImGui::ImageButton");
-			if (ImGui.ImageButton("img_btn", sprExample, 0, c_white, 1, col4.Color(), col4.Alpha())) {
+			var _col = col4.Color();
+			var _cola = col4.Alpha();
+			if (ImGui.ImageButton("img_btn", sprExample, 0, c_white, 1, _col, _cola)) {
 				show_message_async("nice, you clicked the red panda button :O");
 			}
 			
 			ImGui.Text("ImGui::Surface");
 			surface_set_target(surf);
             var xx, yy;
-            if (ImGui.__ExtFlags & ImGuiExtFlags.GM == 0) {
+            if (ImGui.__GFlags & ImGuiGFlags.GM == 0) {
                 xx = display_mouse_get_x() - ImGui.GetCursorScreenPosX();
                 yy = display_mouse_get_y() - ImGui.GetCursorScreenPosY();
             } else {
@@ -228,7 +232,7 @@ if (main_open) {
 				ImGui.TreePop();
 			}
 		
-			var ret = ImGui.CollapsingHeader("ImGui::CollapsingHeader", header_visible, undefined, ImGuiReturnMask.Both);
+			ret = ImGui.CollapsingHeader("ImGui::CollapsingHeader", header_visible, undefined, ImGuiReturnMask.Both);
 			header_visible = ret & ImGuiReturnMask.Pointer;
 			if (ret & ImGuiReturnMask.Return) {
 				ImGui.TextColored("hewwo", c_aqua, 0.5);
@@ -298,7 +302,7 @@ if (main_open) {
 			ImGui.Separator();
 			if (ImGui.BeginTabBar("MyTabBar"))
             {
-				var ret = ImGui.BeginTabItem("Closable", tab1, undefined, ImGuiReturnMask.Both);
+				ret = ImGui.BeginTabItem("Closable", tab1, undefined, ImGuiReturnMask.Both);
 				tab1 = ret & ImGuiReturnMask.Pointer;
 				if (ret & ImGuiReturnMask.Return) {
 	                ImGui.Text("This is a closable tab!\nblah blah blah blah blah");
@@ -417,7 +421,9 @@ if (main_open) {
 		ImGui.BeginChild("Inner_DrawLists", width / 2, height, ImGuiChildFlags.Borders);
 			ImGui.Text("Drawlists");
 			ImGui.Separator();
-			var list = ImGui.GetWindowDrawList(), xx = ImGui.GetCursorScreenPosX(), yy = ImGui.GetCursorScreenPosY();
+			var list = ImGui.GetWindowDrawList();
+			xx = ImGui.GetCursorScreenPosX();
+			yy = ImGui.GetCursorScreenPosY();
 			ImGui.DrawListAddText(list, xx + (width / 4), yy + 4, "Hello from DrawListAddText!", col2);
 			ImGui.DrawListAddCircleFilled(list, xx + 52, yy + 32, 12, c_blue);
 			ImGui.DrawListAddBezierCubic(list, xx + 4, yy + 4, xx + (width / 4), yy + 24, xx + (width / 4) + 32, yy + 48, xx + (width / 4) + 24, yy + 64, c_purple, 3);

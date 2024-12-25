@@ -196,7 +196,7 @@ GMFUNC(__imgui_get_mouse_clicked_count) {
 	Result.kind = VALUE_REAL;
 	Result.val = ImGui::GetMouseClickedCount(final_button);
 
-	GMRETURNS(Real);
+	GMRETURN(Real);
 }
 
 GMFUNC(__imgui_is_mouse_hovering_rect) {
@@ -231,7 +231,7 @@ GMFUNC(__imgui_is_mouse_dragging) {
 
 	float lock_threshold = YYGetFloat(arg, 1);
 	GMDEFAULT(-1.0);
-	GMHINT(Float);
+	GMHINT(Real);
 
 	Result.kind = VALUE_BOOL;
 	Result.val = ImGui::IsMouseDragging(final_button, lock_threshold);
@@ -273,7 +273,7 @@ GMFUNC(__imgui_get_mouse_drag_delta_x) {
 
 	float lock_threshold = YYGetFloat(arg, 1);
 	GMDEFAULT(-1.0);
-	GMHINT(Float);
+	GMHINT(Real);
 
 	Result.kind = VALUE_REAL;
 	Result.val = ImGui::GetMouseDragDelta(final_button, lock_threshold).x;
@@ -286,7 +286,7 @@ GMFUNC(__imgui_get_mouse_drag_delta_y) {
 
 	float lock_threshold = YYGetFloat(arg, 1);
 	GMDEFAULT(-1.0);
-	GMHINT(Float);
+	GMHINT(Real);
 
 	Result.kind = VALUE_REAL;
 	Result.val = ImGui::GetMouseDragDelta(final_button, lock_threshold).y;

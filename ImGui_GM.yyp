@@ -20,7 +20,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.1100.0.713",
   },
   "name":"ImGui_GM",
   "resources":[
@@ -28,6 +28,7 @@
     {"id":{"name":"fnt_consolas","path":"fonts/fnt_consolas/fnt_consolas.yy",},},
     {"id":{"name":"objExample","path":"objects/objExample/objExample.yy",},},
     {"id":{"name":"rmExample","path":"rooms/rmExample/rmExample.yy",},},
+    {"id":{"name":"ImExtNodeEditor","path":"scripts/ImExtNodeEditor/ImExtNodeEditor.yy",},},
     {"id":{"name":"ImGui_Misc","path":"scripts/ImGui_Misc/ImGui_Misc.yy",},},
     {"id":{"name":"ImGui","path":"scripts/ImGui/ImGui.yy",},},
     {"id":{"name":"shdImGui","path":"shaders/shdImGui/shdImGui.yy",},},

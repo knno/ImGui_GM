@@ -493,6 +493,7 @@ GMFUNC(__imgui_save_ini_settings_to_memory) {
 }
 
 GMFUNC(__imgui_clear_ini_settings) {
+	GMOVERRIDE(ClearIniSettings);
 	ImGui::ClearIniSettings();
 	Result.kind = VALUE_UNDEFINED;
 }
@@ -528,7 +529,7 @@ GMFUNC(__imgui_get_viewport_id) {
 
 	Result.kind = VALUE_INT32;
 	Result.val = vp->ID;
-	GMRETURNS(ImGuiID);
+	GMRETURN(ImGuiID);
 }
 
 GMFUNC(__imgui_log_text) {

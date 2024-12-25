@@ -1,7 +1,11 @@
 workspace "dll"
     configurations { "Debug", "Release" }
-    architecture "universal"
     location "dll"
+    platforms { "x64", }
+
+    filter { "platforms:x64" }
+        system "windows"
+        architecture "x64"
 
 project "imgui_gm"
     kind "SharedLib"
@@ -9,22 +13,49 @@ project "imgui_gm"
     cppdialect "C++14"
     targetdir "extensions/ImGui_GM/"
     defines { "GDKEXTENSION_EXPORTS", "__YYDEFINE_EXTENSION_FUNCTIONS__" }
-    architecture "universal"
 
-    files {"dll/*.h", "dll/*.cpp", "dll/imgui/*.h", "dll/imgui/*.cpp", "dll/gm/*.h", "dll/gm/*.cpp"}
+    files {
+        "dll/*.h",
+        "dll/*.cpp",
+        "dll/imgui/*.h",
+        "dll/imgui/*.cpp",
+        "dll/gm/*.h",
+        "dll/gm/*.cpp",
+        "dll/imext/config.h",
+        "dll/imext/*/**.cpp",
+        "dll/imext/*/**.inl",
+        "dll/imext/*/**.h",
+    }
     vpaths {
-        ["Header Files"] = "**.h",
-        ["Source Files"] = {"**.c", "**.cpp"},
-        ["Source Files/Wrappers"] = {"dll/gm/imgui_*_gm.cpp"}
+        ["Configs"] = {"dll/imext/config.h", },
+
+        ["ImGui/GM"] = {"dll/gm/**.h", "dll/gm/**.c", "dll/gm/**.cpp", },
+        ["Wrapper/Base"] = {"dll/gm/*_gm.cpp", },
+        ["ImGui/Internal"] = {
+            "dll/imgui/**.h", "dll/imgui/**.c", "dll/imgui/**.cpp",
+        },
+        ["ImGui"] = {
+            "dll/imgui_gm.h", "dll/imgui_gm.cpp",
+            "dll/imgui_impl_gm.h", "dll/imgui_impl_gm.cpp",
+        },
+
+        ["Wrapper/*"] = {"dll/imext/**/*_gm.cpp", },
+
+        ["Class/Base"] = {"dll/imgui_gm_*.h", },
+        ["Class/*"] = {"dll/imext/**/imext_gm_*.h", },
+
+        ["ImExt/*"] = {"dll/imext/**/**.h", "dll/imext/**/**.c", "dll/imext/**/**.cpp", "dll/imext/**/**.inl", },
     }
 
     filter "configurations:Debug"
         defines { "DEBUG" }
         symbols "On"
+        postbuildcommands { "node ../tools/brief/main.js" }
 
     filter "configurations:Release"
         defines { "NDEBUG" }
         optimize "On"
+        postbuildcommands { "node ../tools/brief/main.js" }
 
     -- Windows
     filter { "action:vs*" }

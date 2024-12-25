@@ -233,11 +233,11 @@ class Processor {
             this.token_const
         ];
         for(let i = 0; i < steps.length; i++) tokens = this.run(steps[i], tokens);
-        Logger.info(`Successfully processed ${this.Tokens.length} tokens and retrieved ${tokens.length} tokens`);
+        Logger.debug(`Successfully processed ${this.Tokens.length} tokens and retrieved ${tokens.length} tokens`);
 
         if (Configuration.WRITE_TOKENS) {
             fs.writeFileSync("tokens.json", JSON.stringify(tokens, undefined, 4), {encoding: "utf-8"});
-            Logger.info(`Wrote ${tokens.length} tokens to "tokens.json"`);
+            Logger.debug(`Wrote ${tokens.length} tokens to "tokens.json"`);
         }
         return tokens;
     }

@@ -1,5 +1,46 @@
 // All the silly stuff that's too messy for ImGui.gml
 
+/// Feather ignore GM1003
+/// Feather ignore GM1014
+/// Feather ignore GM1019
+/// Feather ignore GM1045
+
+/**
+ * @function ImGuiExtMethodCall
+ * @param [method_name]
+ * @param [ext_name]
+ * @param [_args]
+ * @param [if_inited]
+ * 
+ */
+function ImGuiExtMethodCall(method_name=undefined, ext_name=undefined, _args=undefined, if_inited=true) {
+    var _ext_names = ext_name ? [ext_name] : struct_get_names(ImGui.Ext);
+    var _extname, _ext, _ext_s, _ext_m, _cond;
+
+    for (var i=0; i<array_length(_ext_names); i++) {
+        _cond = true;
+        _extname = _ext_names[i];
+        _ext = ImGui.Ext[$ _extname];
+
+        if (if_inited) {
+            _cond = false;
+            _ext_s = static_get(_ext);
+            if (_ext_s[$ "__Initialized"] != undefined) {
+                if (_ext_s.__Initialized) {
+                    _cond = true;
+                }
+            }
+        }
+        if (_cond) {
+            _ext_m = _ext[$ method_name];
+            if (is_method(_ext_m)) {
+				if (!is_undefined(_args)) {if (!is_array(_args)) {_args = [_args];}}
+                if (is_array(_args)) method_call(_ext_m, _args) else _ext_m();
+            }
+        }
+    }
+}
+
 /** 
  * @function ImGuiBaseMainWindow
  * @constructor
@@ -121,7 +162,7 @@ function ImGuiState() constructor {
         var info = {
             D3DDevice: self.Engine.D3DDevice,
             D3DDeviceContext: self.Engine.D3DDeviceContext,
-            ExtFlags: ImGui.__ExtFlags,
+            GFlags: ImGui.__GFlags,
             ConfigFlagsOverrideSet: config_flags_set,
             ConfigFlagsOverrideClear: config_flags_clear,
         };
@@ -181,7 +222,7 @@ function ImGuiState() constructor {
 }
 
 // Used by Color*4 functions, use .Color to get BGR value for GM functions
-function ImColor(red, green, blue, alpha=1) constructor {
+function ImColor(red, green=undefined, blue=undefined, alpha=1) constructor {
 	/*
 		ImColor(c_red);
 		ImColor(c_red, 0.5);
@@ -202,6 +243,7 @@ function ImColor(red, green, blue, alpha=1) constructor {
 		if (green != undefined) {
 			a = green;	
 		} else {
+			/// Feather ignore GM1044
 			var high = (red >> 24) & 0xFF;
 			if (high > 0) {
 				a = high / 0xFF;	
@@ -288,13 +330,13 @@ function ImGuiSelectionBasicStorage(size=0, preserve_order=undefined) constructo
 #macro IMGUI_PAYLOAD_TYPE_COLOR_4F     "_COL4F"    // (GML) struct: Standard type for colors. User code may use this type.
 #macro IMGUI_GM_BUFFER_SIZE             1024 * 8    // size of draw command & font buffers (they're grow buffers, this is just the initial size)
 
-enum ImGuiExtFlags {
+enum ImGuiGFlags {
     None = 0,
 	RENDERER_GM = 1 << 0,
 	IMPL_GM = 1 << 1,
 	IMPL_DX11 = 1 << 2,
 	IMPL_WIN32 = 1 << 3,
-    GM = ImGuiExtFlags.IMPL_GM | ImGuiExtFlags.RENDERER_GM,
+    GM = ImGuiGFlags.IMPL_GM | ImGuiGFlags.RENDERER_GM,
 }
 
 /// @section Enums

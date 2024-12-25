@@ -47,6 +47,7 @@ class Program {
         const copy = [];
         for(let i = 0; i < rules.length; i++) {
             copy.push(...globSync(rules[i]).map(e => {
+                if (!fs.existsSync(output + path.dirname(e))) fs.mkdirSync(output + path.dirname(e));
                 fs.copyFileSync(e, output + e);
                 return path.normalize(output + e);
             }));

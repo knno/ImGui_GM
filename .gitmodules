@@ -2,3 +2,6 @@
 	path = dll/thirdparty/imgui
 	url = https://github.com/ocornut/imgui.git
 	branch = docking
+[submodule "dll/thirdparty/imgui-node-editor"]
+	path = dll/thirdparty/imgui-node-editor
+	url = https://github.com/ngscopeclient/imgui-node-editor

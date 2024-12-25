@@ -52,7 +52,7 @@ GMFUNC(__imgui_begin_multi_select) {
 
 	Result.kind = VALUE_PTR;
 	Result.ptr = ms_io;
-	GMRETURNS(ImGuiMultiSelectIO);
+	GMRETURN(ImGuiMultiSelectIO);
 }
 
 GMFUNC(__imgui_selection_storage_apply_requests) {
@@ -79,7 +79,7 @@ GMFUNC(__imgui_end_multi_select) {
 
 	Result.kind = VALUE_PTR;
 	Result.ptr = ms_io;
-	GMRETURNS(ImGuiMultiSelectIO);
+	GMRETURN(ImGuiMultiSelectIO);
 }
 
 GMFUNC(__imgui_set_next_item_selection_user_data) {

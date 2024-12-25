@@ -29,7 +29,7 @@ class FileEditor {
         this.Size = this.Content.length;
         this.Lines = (this.Content.match(/\n/g) ?? []).length;
         this.Changed = false;
-        Logger.info(`Successfully loaded file "${this.Name}" (${this.Lines} lines, ${this.Content.length} characters)`);
+        Logger.debug(`Successfully loaded file "${this.Name}" (${this.Lines} lines, ${this.Content.length} characters)`);
     }
 
     /**
@@ -62,7 +62,7 @@ class FileEditor {
 
         const hash = crypto.createHash("md5").update(value).digest("hex");
         if (hash === this.Hash) {
-            Logger.info(`Skipping update for file "${this.Name}", no changes have been made`);
+            Logger.debug(`Skipping update for file "${this.Name}", no changes have been made`);
             return false;
         }
 
@@ -78,7 +78,7 @@ class FileEditor {
      */
     commit() {
         if (!this.Changed) {
-            Logger.info(`Skipping write to file "${this.Name}", no changes have been made`);
+            Logger.debug(`Skipping write to file "${this.Name}", no changes have been made`);
             return false;
         }
 
@@ -95,7 +95,7 @@ class FileEditor {
         const char_diff = this.Content.length - this.Size;
         const line_count = (this.Content.match(/\n/g) ?? []).length;
         const line_diff = line_count - this.Lines;
-        Logger.info(`Successfully wrote file "${this.Name}" (${line_diff < 0 ? "" : (line_diff === 0 ? "±" : "+")}${line_diff} line${line_diff !== 1 ? "s" : ""}, ${char_diff < 0 ? "" : (char_diff === 0 ? "±" : "+")}${char_diff} character${char_diff !== 1 ? "s" : ""})`)
+        Logger.debug(`Successfully wrote file "${this.Name}" (${line_diff < 0 ? "" : (line_diff === 0 ? "±" : "+")}${line_diff} line${line_diff !== 1 ? "s" : ""}, ${char_diff < 0 ? "" : (char_diff === 0 ? "±" : "+")}${char_diff} character${char_diff !== 1 ? "s" : ""})`)
         this.Size = this.Content.length;
         this.Lines = line_count;
         this.Changed = false;

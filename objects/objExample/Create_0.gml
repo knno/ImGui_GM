@@ -1,3 +1,5 @@
+/// Feather ignore GM1014 in /Example
+
 ///
 /// Create event
 ///
@@ -12,7 +14,7 @@ operating_system = environment_get_variable("OS");
 ini_filename = "";
 
 /// Optional: Set up the extension before initialization.
-//ImGui.__ExtFlags &= ~ImGuiExtFlags.GM; // Uncomment to use DX11 renderer.
+//ImGui.__GFlags &= ~ImGuiGFlags.GM; // Uncomment to use DX11 renderer.
 
 /// Optional: Define common config flags
 var _configs = ImGuiConfigFlags.DockingEnable | ImGuiConfigFlags.ViewportsEnable;
@@ -21,6 +23,17 @@ ImGui.__Initialize(_configs); // Note that this creates a default window and sta
 
 imgui_state = ImGui.__State; // Capture the created state.
 imgui_window = ImGui.__Window; // Capture the created gamewindow.
+
+imext = {
+	node_editor: undefined,
+};
+
+/// NodeEditor
+ImGui.Ext.NodeEditor.Initialize();
+if (ImGui.Ext.NodeEditor.__Initialized) {
+	imext.node_editor = ImGui.Ext.NodeEditor.CreateEditor();
+}
+
 
 /// Optional: load and save ini file in a custom path.
 if ini_filename != "" {

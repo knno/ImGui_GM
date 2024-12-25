@@ -5,17 +5,31 @@ class Configuration {
     /**
      * @description The Github repository URL. 
      */
-    static REPOSITORY_URL = "https://github.com/nommiin/ImGui_GM"
+    static REPOSITORY_URL = "https://github.com/knno/ImGui_GM"
 
     /**
      * @description The Github repository name. 
      */
-    static REPOSITORY_NAME = "nommiin/ImGui_GM";
+    static REPOSITORY_NAME = "knno/ImGui_GM";
 
     /**
      * @description The name of the program, used by Logger.js
      */
     static PROGRAM_NAME = "brief";
+
+    /**
+     * @description Suppress warning types in Logger.js
+     * 
+     * Examples:
+     *      true
+     *      ["W001", "H002",]
+     *      "W*"
+     */
+    static LOGGER_IGNORE_WARNS = [
+        "H000",
+        "W001",
+        "W002",
+    ];
 
     /**
      * @description If true, FileEditor will write changes to files with ".test" appended to their filename
@@ -47,6 +61,11 @@ class Configuration {
      * @description Keyword/macro used for marking wrapper functions
      */
     static WRAPPER_DEF = "GMFUNC";
+
+    /**
+     * @description Prefix of constructors in GML for ImGui extensions (ImExt)
+     */
+    static IMEXT_PREFIX = "ImExt";
 
     /**
      * @description If true, GML writer will call forceinline for each static method

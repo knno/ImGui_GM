@@ -7,6 +7,7 @@
     {"name":"ImGui_GM","order":1,"path":"extensions/ImGui_GM/ImGui_GM.yy",},
     {"name":"fnt_consolas","order":5,"path":"fonts/fnt_consolas/fnt_consolas.yy",},
     {"name":"rmExample","order":1,"path":"rooms/rmExample/rmExample.yy",},
+    {"name":"ImExtNodeEditor","order":4,"path":"scripts/ImExtNodeEditor/ImExtNodeEditor.yy",},
     {"name":"ImGui_Misc","order":2,"path":"scripts/ImGui_Misc/ImGui_Misc.yy",},
     {"name":"shdImGui","order":3,"path":"shaders/shdImGui/shdImGui.yy",},
     {"name":"sprExample","order":2,"path":"sprites/sprExample/sprExample.yy",},

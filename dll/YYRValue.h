@@ -114,6 +114,7 @@ const int ERV_Owned = (1 << 3);
 #define JS_BUILTIN_PROPERTY_DEFAULT				(ERV_Writable | ERV_Configurable )
 #define JS_BUILTIN_LENGTH_PROPERTY_DEFAULT		(ERV_None)
 
+FORCEINLINE  CInstance* YYGML_FindInstance(const YYRValue& _val) FORCEINLINE_ATTR;
 
 #pragma pack( push, 4)
 struct RValue
@@ -149,7 +150,7 @@ struct RValue
 	long long asInt64() const { return INT64_RValue(this); }
 	double asReal() const { return REAL_RValue(this); }
 	bool asBool() const { return BOOL_RValue(this); }
-	CInstance* asObject() const { return (((kind & MASK_KIND_RVALUE) == VALUE_OBJECT)) ? (CInstance*)pObj : NULL; }
+	CInstance* asObject() const { return YYGML_FindInstance( *(YYRValue*)this); }
 };
 
 
