@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ImExtNodeEditor",
   "parent":{
-    "name":"ImGui_GM",
-    "path":"folders/ImGui_GM.yy",
+    "name":"ImExt",
+    "path":"folders/ImGui_GM/ImExt.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

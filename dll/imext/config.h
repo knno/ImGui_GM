@@ -20,4 +20,6 @@
 //
 //
 
+#pragma once
+
 #define IMEXT_NODE_EDITOR "imgui_node_editor"

@@ -34,7 +34,6 @@ if (ImGui.Ext.NodeEditor.__Initialized) {
 	imext.node_editor = ImGui.Ext.NodeEditor.CreateEditor();
 }
 
-
 /// Optional: load and save ini file in a custom path.
 if ini_filename != "" {
     ImGui.IniFilename(ini_filename);

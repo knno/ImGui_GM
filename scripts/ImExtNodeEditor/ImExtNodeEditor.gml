@@ -19,11 +19,6 @@ function ImExtNodeEditor() constructor {
 		SkipFirst = 1,
 	}
 
-	enum ImExtNodeEditorTesting {
-		None = 0,
-		Dog = 1,
-	}
-
 	/// @section Internal
 	static __Initialized = false;
 
