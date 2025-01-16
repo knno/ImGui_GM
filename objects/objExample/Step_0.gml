@@ -256,6 +256,7 @@ if (main_open) {
 		
 			input_int = ImGui.InputInt("ImGui::InputInt", input_int, 1, 5);
 			input_float = ImGui.InputFloat("ImGui::InputFloat", input_float, 0.1, 0.5);
+			ImGui.InputFloat4("ImGui::InputFloat4", input_float4, 0.1, 0.5);
 			ImGui.EndChild();
 		
 			ImGui.SameLine();

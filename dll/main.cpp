@@ -14,8 +14,8 @@ ID3D11Device* g_pd3dDevice;
 ID3D11DeviceContext* g_pd3dDeviceContext;
 ID3D11ShaderResourceView* g_pView;
 
-ImGuiGFlags g_ImGuiGFlags;
-int g_KeepAlive;
+ImGuiGFlags g_ImGuiGFlags = 0;
+int g_KeepAlive = 0;
 
 YYRunnerInterface gs_runnerInterface;
 YYRunnerInterface* g_pYYRunnerInterface;
@@ -52,14 +52,14 @@ GMFUNC(__imgui_initialize) {
 	RValue* info = YYGetStruct(arg, 2);
 	GMHINT(Struct)
 
-	if (g_KeepAlive == NULL) {
+	if (g_KeepAlive == 0) {
 		g_KeepAlive = CreateDsMap(0, 0);
 	}
 
 	RValue* rvalue;
 	g_pd3dDevice = (ID3D11Device*)(YYStructGetMember(info, "D3DDevice")->ptr);
 	g_pd3dDeviceContext = (ID3D11DeviceContext*)(YYStructGetMember(info, "D3DDeviceContext")->ptr);
-	if (g_ImGuiGFlags == NULL) {
+	if (g_ImGuiGFlags == 0) {
 		g_ImGuiGFlags = YYStructGetMember(info, "GFlags")->asInt64();
 	}
 

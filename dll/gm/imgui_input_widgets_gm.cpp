@@ -108,7 +108,7 @@ GMFUNC(__imgui_input_float3) {
 GMFUNC(__imgui_input_float4) {
 	const int len = 4;
 	const char* label = YYGetString(arg, 0);
-	float* v = YYGetArray<float>(arg, 1, 2);
+	float* v = YYGetArray<float>(arg, 1, len);
 	float step = YYGetReal(arg, 2);
 	GMDEFAULT(0);
 	float step_fast = YYGetReal(arg, 3);

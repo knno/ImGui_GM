@@ -24,14 +24,17 @@ ImGui.__Initialize(_configs); // Note that this creates a default window and sta
 imgui_state = ImGui.__State; // Capture the created state.
 imgui_window = ImGui.__Window; // Capture the created gamewindow.
 
+// Optional: Extensions
 imext = {
-	node_editor: undefined,
+	node_editor: true,
 };
 
 /// NodeEditor
-ImGui.Ext.NodeEditor.Initialize();
-if (ImGui.Ext.NodeEditor.__Initialized) {
-	imext.node_editor = ImGui.Ext.NodeEditor.CreateEditor();
+if imext.node_editor == true {
+	ImGui.Ext.NodeEditor.Initialize();
+	if (ImGui.Ext.NodeEditor.__Initialized) {
+		imext.node_editor = ImGui.Ext.NodeEditor.CreateEditor();
+	}
 }
 
 /// Optional: load and save ini file in a custom path.
@@ -108,6 +111,8 @@ input_hint = "";
 
 input_int = irandom(255);
 input_float = random(255);
+input_float4 = [1.0, 2.0, 3.0, 4.0];
+
 plot_val = [];
 plot_val2 = [];
 

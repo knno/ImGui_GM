@@ -49,7 +49,7 @@ GMFUNC(__imgui_dock_space_over_viewport) {
         final_dockspace_id = YYGetReal(arg, 0);
     }
     else {
-        final_dockspace_id = NULL;
+        final_dockspace_id = 0;
     }
     GMHINT(Real | Undefined)
     GMDEFAULT(0);

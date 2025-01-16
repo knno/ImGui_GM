@@ -2621,6 +2621,22 @@ function ImGui() constructor {
 		return __imgui_is_item_toggled_selection();
 	}
 
+	/// @function CreateMultiSelectBasicStorage
+	/// @param {Struct} yystruct
+	/// @context ImGui
+	/// @return {Pointer}
+	static CreateMultiSelectBasicStorage = function(yystruct) {
+		return __imgui_create_multi_select_basic_storage(yystruct);
+	}
+
+	/// @function DestroyMultiSelectBasicStorage
+	/// @param {Pointer} storage_ptr
+	/// @context ImGui
+	/// @return {Undefined}
+	static DestroyMultiSelectBasicStorage = function(storage_ptr) {
+		return __imgui_destroy_multi_select_basic_storage(storage_ptr);
+	}
+
 	/// @function BeginMultiSelect
 	/// @param {ImGuiMultiSelectFlags} flags
 	/// @param {Real} size
@@ -2653,6 +2669,24 @@ function ImGui() constructor {
 	/// @return {Unknown<unset>}
 	static SetNextItemSelectionUserData = function(idx) {
 		return __imgui_set_next_item_selection_user_data(idx);
+	}
+
+	/// @function SelectionStorageContains
+	/// @param {ImGuiSelectionBasicStorage} selection
+	/// @param {Real} idx
+	/// @context ImGui
+	/// @return {Bool}
+	static SelectionStorageContains = function(selection, idx) {
+		return __imgui_selection_storage_contains(selection, idx);
+	}
+
+	/// @function SelectionStorageSize
+	/// @param {ImGuiSelectionBasicStorage} selection
+	/// @param {Any} [value=undefined]
+	/// @context ImGui
+	/// @return {Real}
+	static SelectionStorageSize = function(selection, value=undefined) {
+		return __imgui_selection_storage_size(selection, value);
 	}
 
 	/// @function SliderFloat
@@ -3872,8 +3906,8 @@ function ImGui() constructor {
 		Modal = 1 << 27,
 		ChildMenu = 1 << 28,
 		DockNodeHost = 1 << 29,
+		NavFlattened = 1 << 29,
 		AlwaysUseWindowPadding = 1 << 30,
-		NavFlattened = 1 << 31,
 	}
 
 	enum ImGuiChildFlags {
@@ -3943,11 +3977,13 @@ function ImGui() constructor {
 		FramePadding = 1 << 10,
 		SpanAvailWidth = 1 << 11,
 		SpanFullWidth = 1 << 12,
-		SpanTextWidth = 1 << 13,
+		SpanLabelWidth = 1 << 13,
 		SpanAllColumns = 1 << 14,
-		NavLeftJumpsBackHere = 1 << 15,
+		LabelSpanAllColumns = 1 << 15,
+		NavLeftJumpsBackHere = 1 << 17,
 		CollapsingHeader = ImGuiTreeNodeFlags.Framed | ImGuiTreeNodeFlags.NoTreePushOnOpen | ImGuiTreeNodeFlags.NoAutoOpenOnLog,
 		AllowItemOverlap = ImGuiTreeNodeFlags.AllowOverlap,
+		SpanTextWidth = ImGuiTreeNodeFlags.SpanLabelWidth,
 	}
 
 	enum ImGuiPopupFlags {
@@ -4094,6 +4130,7 @@ function ImGui() constructor {
 		Float,
 		Double,
 		Bool,
+		String,
 	}
 
 	enum ImGuiSortDirection {

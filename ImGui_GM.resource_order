@@ -2,7 +2,8 @@
   "FolderOrderSettings":[
     {"name":"Example","order":4,"path":"folders/Example.yy",},
     {"name":"ImGui_GM","order":3,"path":"folders/ImGui_GM.yy",},
-    {"name":"ImExt","order":5,"path":"folders/ImGui_GM/ImExt.yy",},
+    {"name":"Extensions","order":7,"path":"folders/ImGui_GM/Extensions.yy",},
+    {"name":"Main","order":6,"path":"folders/ImGui_GM/Main.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"ImGui_GM","order":1,"path":"extensions/ImGui_GM/ImGui_GM.yy",},

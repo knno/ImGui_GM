@@ -42,7 +42,7 @@ class Program {
 
         Logger.info("  Retrieving ImGui files...", {type: "ImGui"});
 
-        const files = fs.readdirSync(root_gm).filter(e => e.endsWith("_gm.cpp"));
+        const files = [root + "imgui_gm.cpp", ...fs.readdirSync(root_gm).filter(e => e.endsWith("_gm.cpp")).map(e => root_gm + e)];
         if (files.length === 0) throw `Could not run program, could not find any wrapper files in "${root_gm}"`;
         Logger.debug(`  Found ${files.length} wrapper files in "${root_gm}"`, {type: "ImGui"});
 
@@ -92,7 +92,7 @@ class Program {
         Logger.info("Parsing ImGui wrappers...", {type: "ImGui"});
         files.forEach(e => {
             if (e.startsWith("imgui_impl_gm")) return;
-            this.parseWrapper(wrappers, new FileEditor(`${root_gm}${e}`, true));
+            this.parseWrapper(wrappers, new FileEditor(e, true));
         });
 
         Logger.info("Parsing ImGui extensions wrappers...", {type: "ImExt"});
@@ -112,7 +112,8 @@ class Program {
         Logger.info("Writing wrappers...", {type: "ImGui"});
         this.writeWrappers(wrappers, new FileEditor(extension));
 
-        let imgui_wrappers = wrappers.filter(w => (w.Context === "ImGui"));
+        const valid_wrappers = wrappers.filter(w => (!(w.Calls === "_" && w.Context === "ImGui")));
+        let imgui_wrappers = valid_wrappers.filter(w => (w.Context === "ImGui"));
 
         Logger.debug("Updating ImGui.gml script...", {type: "ImGui"});
         this.writeScripts(imgui_wrappers, header.enums, new FileEditor(script));
@@ -183,9 +184,11 @@ class Program {
         }
 
         if (Configuration.WRITE_SNAKE) {
-            Logger.debug("Writing snake-case script...");
-            this.writeSnakeCase(wrappers, header.enums, new FileEditor("snake_case.gml"));
-            Logger.info(`Successfully wrote ${wrappers.length} wrappers in snake_case.gml`);
+            Logger.debug("Writing snake-case scripts...");
+            this.writeSnakeCase(imgui_wrappers, header.enums, new FileEditor("imgui_snake_case_no_extensions.gml"));
+            Logger.info(`Successfully wrote ${imgui_wrappers.length} wrappers in imgui_snake_case_no_extensions.gml`);
+            this.writeSnakeCase(valid_wrappers, header.enums, new FileEditor("imgui_snake_case.gml"));
+            Logger.info(`Successfully wrote ${valid_wrappers.length} wrappers in imgui_snake_case.gml`);
         }
 
         if (Configuration.WRITE_DOCS) {
@@ -411,7 +414,7 @@ class Program {
     }
 
     /**
-     * Reads imgui_gm.cpp script and parses out wrapped functions
+     * Reads cpp script and parses out wrapped functions
      * @param {Array<Wrapper>} wrappers
      * @param {FileEditor} file A file editor containing the wrapper file
      * @param {String} [context="ImGui"] The context, or namespace prefixed with IMEXT_PREFIX.
@@ -839,7 +842,7 @@ class Program {
     static writeSnakeCase(wrappers, enums, file) {
         let content = `/**\n*  This script includes snake_case function defintions for ImGui_GM, as an alternative to the namespaced convention\n*  To use, just drop this script into your project with ImGui_GM\n*  Generated at ${new Date().toLocaleString()}\n*/\n\n`;
         ["Initialize", "NewFrame", "EndFrame", "Render", "Draw", "Shutdown"].forEach(e => {
-            const name = "imgui_" + e[0].toLowerCase() + e.slice(1);
+            const name = "imgui_" + Util.toSnakecase(e);
             content += `/// @function ${name}\nfunction ${name}() {\n	return ImGui.__${e}();\n}\n\n`;
         });
 

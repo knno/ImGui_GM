@@ -29,6 +29,11 @@ class Program {
     }
 
     static main(base, output) {
+        this.prepare(base, output);
+        this.bundle(Bundle, output);
+    }
+
+    static prepare(base, output) {
         if (!fs.existsSync(base)) throw `Could not run program, could not find base package file at "${base}"`;
         const extension = new AdmZip(base);
         
@@ -91,7 +96,9 @@ class Program {
                 }
             }
         }
+    }
 
+    static bundle(Bundle, output) {
         const out = new AdmZip();
         out.addLocalFolder(output);
         out.writeZip(this.parse(Bundle.Target ?? output + "package.yymps", e => e.replaceAll(".", "_")));

@@ -76,7 +76,7 @@ GMFUNC(__imgui_is_key_chord_pressed) {
 			Result.val = ImGui::IsKeyChordPressed(final_key_chord, (ImGuiInputFlags)flags->asReal(), (ImGuiID)owner_id->asReal());
 		}
 		else {
-			Result.val = ImGui::IsKeyChordPressed(final_key_chord, (ImGuiInputFlags)flags->asReal(), NULL);
+			Result.val = ImGui::IsKeyChordPressed(final_key_chord, (ImGuiInputFlags)flags->asReal(), 0);
 		}
 	}
 }

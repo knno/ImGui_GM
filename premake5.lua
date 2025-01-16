@@ -22,6 +22,7 @@ project "imgui_gm"
         "dll/gm/*.h",
         "dll/gm/*.cpp",
         "dll/imext/config.h",
+        -- Extensions
         "dll/imext/*/**.cpp",
         "dll/imext/*/**.inl",
         "dll/imext/*/**.h",
@@ -63,9 +64,11 @@ project "imgui_gm"
 
     -- Ubuntu
     filter { "action:gmake*" }
-        if os.ishost("linux") then
+        if _OPTIONS["os"] == "linux" or os.ishost("linux") then
             defines "OS_Linux"
             pic "on"
+            targetextension ".so"
+            buildoptions { "-shared", "-Werror" }
         else
             defines "OS_Mac"
         end

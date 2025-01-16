@@ -32,7 +32,7 @@ There are various ways to use the **ImGui_GM** extension. Below we will see the 
 1. Create a persistent object and call the essential functions in their respective events.
   - `ImGui.__Initialize()` in the create event
   - `ImGui.__NewFrame()` in any stepping event (suggested: *Begin Step*)
-  - `ImGui.__EndFrame()` in any stepping event (suggested: *End Step*)
+  - `ImGui.__EndFrame()` in any stepping event (suggested: *End Step* + *Room End*)
   - `ImGui.__Render()` in any rendering event (suggested: *Draw*)
   - `ImGui.__Draw()` in any draw event (suggested: *Draw GUI*)
   - `ImGui.__Shutdown()` in game end event

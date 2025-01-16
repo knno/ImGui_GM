@@ -24,7 +24,7 @@ GMFUNC(__imgui_is_item_toggled_selection) {
 /// MultiSelect
 
 GMFUNC(__imgui_create_multi_select_basic_storage) {
-	GMOVERRIDE(_);
+	GMOVERRIDE(CreateMultiSelectBasicStorage);
 
 	RValue* yystruct = YYGetStruct(arg, 0);
 	ImGuiSelectionBasicStorage* selection = CreateImGuiSelectionBasicStorageFromStruct(yystruct);
@@ -34,7 +34,7 @@ GMFUNC(__imgui_create_multi_select_basic_storage) {
 }
 
 GMFUNC(__imgui_destroy_multi_select_basic_storage) {
-	GMOVERRIDE(_);
+	GMOVERRIDE(DestroyMultiSelectBasicStorage);
 
 	ImGuiSelectionBasicStorage* storage_ptr = (ImGuiSelectionBasicStorage*)YYGetPtr(arg, 0);
 	RemoveImGuiSelectionBasicStorage(storage_ptr);
@@ -89,7 +89,7 @@ GMFUNC(__imgui_set_next_item_selection_user_data) {
 }
 
 GMFUNC(__imgui_selection_storage_contains) {
-	GMOVERRIDE(_);
+	GMOVERRIDE(SelectionStorageContains);
 	RValue* selection = &arg[0];
 	GMHINT(ImGuiSelectionBasicStorage);
 	ImGuiSelectionBasicStorage* final_selection;
@@ -106,7 +106,7 @@ GMFUNC(__imgui_selection_storage_contains) {
 }
 
 GMFUNC(__imgui_selection_storage_size) {
-	GMOVERRIDE(_);
+	GMOVERRIDE(SelectionStorageSize);
 
 	RValue* selection = &arg[0];
 	GMHINT(ImGuiSelectionBasicStorage);

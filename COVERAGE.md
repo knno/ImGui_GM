@@ -495,7 +495,11 @@ Below is a table of non-standard functions made specifically for ImGui
 | `ImGui.GetWindowContentRegionMaxX()` | [imgui_layout_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_layout_gm.cpp#L209) | - |
 | `ImGui.GetWindowContentRegionMaxY()` | [imgui_layout_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_layout_gm.cpp#L216) | - |
 | `ImGui.GetDragDropPayloadType()` | [imgui_payload_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_payload_gm.cpp#L83) | - |
+| `ImGui.CreateMultiSelectBasicStorage(yystruct)` | [imgui_selectable_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_selectable_gm.cpp#L26) | - |
+| `ImGui.DestroyMultiSelectBasicStorage(storage_ptr)` | [imgui_selectable_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_selectable_gm.cpp#L36) | - |
 | `ImGui.SelectionStorageApplyRequests(selection, ms_io)` | [imgui_selectable_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_selectable_gm.cpp#L58) | - |
+| `ImGui.SelectionStorageContains(selection, idx)` | [imgui_selectable_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_selectable_gm.cpp#L91) | - |
+| `ImGui.SelectionStorageSize(selection, value)` | [imgui_selectable_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_selectable_gm.cpp#L108) | - |
 | `ImGui.SliderFloatN(label, v, v_speed, v_min, v_max, format, flags, count)` | [imgui_slider_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_slider_gm.cpp#L86) | - |
 | `ImGui.SliderIntN(label, v, v_min, v_max, format, flags, count)` | [imgui_slider_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_slider_gm.cpp#L196) | - |
 | `ImGui.GetStyleColor(idx)` | [imgui_style_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_style_gm.cpp#L79) | - |
