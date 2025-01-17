@@ -7,8 +7,8 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 # Coverage
 
 - ![coverage](https://badgen.net/https/raw.githubusercontent.com/knno/ImGui_GM/main/extra/badges/coverage.json?icon=awesome)
-- 398 out of 445 supported API functions wrapped (**89% complete**)
-- 398 out of 809 total API functions wrapped (*49% complete*)
+- 402 out of 445 supported API functions wrapped (**90% complete**)
+- 402 out of 809 total API functions wrapped (*50% complete*)
 - Note that 379 out of 809 API functions are not supported (46%)
 
 | Function | Wrapped | Link | Notes |
@@ -284,12 +284,12 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 | `ImGui::SetNextWindowClass` | ✅ | [imgui_docking_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_docking_gm.cpp#L84) | - |
 | `ImGui::GetWindowDockID` | ✅ | [imgui_docking_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_docking_gm.cpp#L98) | - |
 | `ImGui::IsWindowDocked` | ✅ | [imgui_docking_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_docking_gm.cpp#L103) | - |
-| `ImGui::LogToTTY` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L550) | - |
-| `ImGui::LogToFile` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L569) | - |
-| `ImGui::LogToClipboard` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L542) | - |
-| `ImGui::LogFinish` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L559) | - |
-| `ImGui::LogButtons` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L564) | - |
-| `ImGui::LogText` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L535) | - |
+| `ImGui::LogToTTY` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L586) | - |
+| `ImGui::LogToFile` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L605) | - |
+| `ImGui::LogToClipboard` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L578) | - |
+| `ImGui::LogFinish` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L595) | - |
+| `ImGui::LogButtons` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L600) | - |
+| `ImGui::LogText` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L542) | - |
 | `ImGui::LogTextV` | ❌ | - | Unsupported, use `string` function in GameMaker for string formatting |
 | `ImGui::BeginDragDropSource` | ✅ | [imgui_payload_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_payload_gm.cpp#L3) | - |
 | `ImGui::SetDragDropPayload` | ✅ | [imgui_payload_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_payload_gm.cpp#L26) | See [Drag and Drop Payloads](https://github.com/knno/ImGui_GM/wiki/Drag-and-Drop-Payloads) for more info on handling payloads |
@@ -302,9 +302,9 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 | `ImGui::EndDisabled` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L193) | - |
 | `ImGui::PushClipRect` | ✅ | [imgui_layout_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_layout_gm.cpp#L260) | - |
 | `ImGui::PopClipRect` | ✅ | [imgui_layout_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_layout_gm.cpp#L271) | - |
-| `ImGui::SetItemDefaultFocus` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L408) | - |
+| `ImGui::SetItemDefaultFocus` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L415) | - |
 | `ImGui::SetKeyboardFocusHere` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L388) | - |
-| `ImGui::SetNavCursorVisible` | ❌ | - | - |
+| `ImGui::SetNavCursorVisible` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L396) | - |
 | `ImGui::SetNextItemAllowOverlap` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L316) | - |
 | `ImGui::IsItemHovered` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L198) | - |
 | `ImGui::IsItemActive` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L206) | - |
@@ -323,7 +323,7 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 | `ImGui::GetItemRectMin` | ✅ | - | Use X/Y wrappers. ImVec2 returns are unsupported |
 | `ImGui::GetItemRectMax` | ✅ | - | Use X/Y wrappers. ImVec2 returns are unsupported |
 | `ImGui::GetItemRectSize` | ✅ | - | Use Width/Height wrappers. ImVec2 returns are unsupported |
-| `ImGui::GetMainViewport` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L519) | - |
+| `ImGui::GetMainViewport` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L526) | - |
 | `ImGui::GetBackgroundDrawList` | ✅ | [imgui_drawlist_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_drawlist_gm.cpp#L4) | - |
 | `ImGui::GetForegroundDrawList` | ✅ | [imgui_drawlist_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_drawlist_gm.cpp#L18) | - |
 | `ImGui::IsRectVisible` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L332) | - |
@@ -344,7 +344,7 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 | `ImGui::IsKeyChordPressed` | ✅ | [imgui_input_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_input_gm.cpp#L58) | - |
 | `ImGui::GetKeyPressedAmount` | ✅ | [imgui_input_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_input_gm.cpp#L84) | - |
 | `ImGui::GetKeyName` | ✅ | [imgui_input_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_input_gm.cpp#L98) | - |
-| `ImGui::SetNextFrameWantCaptureKeyboard` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L583) | - |
+| `ImGui::SetNextFrameWantCaptureKeyboard` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L619) | - |
 | `ImGui::Shortcut` | ✅ | [imgui_input_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_input_gm.cpp#L305) | - |
 | `ImGui::SetNextItemShortcut` | ✅ | [imgui_input_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_input_gm.cpp#L325) | - |
 | `ImGui::SetItemKeyOwner` | ✅ | [imgui_input_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_input_gm.cpp#L337) | - |
@@ -363,18 +363,18 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 | `ImGui::ResetMouseDragDelta` | ✅ | [imgui_input_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_input_gm.cpp#L295) | - |
 | `ImGui::GetMouseCursor` | ✅ | - | Handled internally by GML |
 | `ImGui::SetMouseCursor` | ✅ | - | Handled internally by GML |
-| `ImGui::SetNextFrameWantCaptureMouse` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L596) | - |
-| `ImGui::GetClipboardText` | ❌ | - | - |
-| `ImGui::SetClipboardText` | ❌ | - | - |
-| `ImGui::LoadIniSettingsFromDisk` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L452) | - |
-| `ImGui::LoadIniSettingsFromMemory` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L463) | - |
-| `ImGui::SaveIniSettingsToDisk` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L475) | - |
-| `ImGui::SaveIniSettingsToMemory` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L487) | - |
+| `ImGui::SetNextFrameWantCaptureMouse` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L632) | - |
+| `ImGui::GetClipboardText` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L549) | - |
+| `ImGui::SetClipboardText` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L555) | - |
+| `ImGui::LoadIniSettingsFromDisk` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L459) | - |
+| `ImGui::LoadIniSettingsFromMemory` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L470) | - |
+| `ImGui::SaveIniSettingsToDisk` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L482) | - |
+| `ImGui::SaveIniSettingsToMemory` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L494) | - |
 | `ImGui::DebugTextEncoding` | ❌ | - | - |
 | `ImGui::DebugFlashStyleColor` | ❌ | - | - |
 | `ImGui::DebugStartItemPicker` | ❌ | - | - |
 | `ImGui::DebugCheckVersionAndDataLayout` | ❌ | - | - |
-| `ImGui::DebugLog` | ❌ | - | - |
+| `ImGui::DebugLog` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L564) | - |
 | `ImGui::DebugLogV` | ❌ | - | Unsupported, use `string` function in GameMaker for string formatting |
 | `ImGui::SetAllocatorFunctions` | ❌ | - | - |
 | `ImGui::GetAllocatorFunctions` | ❌ | - | - |
@@ -385,7 +385,7 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 | `ImGui::DestroyPlatformWindows` | ✅ | - | Handled internally by `__imgui_shutdown` function |
 | `ImGui::FindViewportByID` | ✅ | [imgui_docking_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_docking_gm.cpp#L27) | - |
 | `ImGui::FindViewportByPlatformHandle` | ✅ | [imgui_docking_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_docking_gm.cpp#L35) | - |
-| `ImGui::ClearIniSettings` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L495) | - |
+| `ImGui::ClearIniSettings` | ✅ | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L502) | - |
 | `ImGui::GetKeyChordName` | ✅ | [imgui_input_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_input_gm.cpp#L107) | - |
 | `ImGui::DockBuilderDockWindow` | ✅ | [imgui_docking_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_docking_gm.cpp#L111) | - |
 | `ImGui::DockBuilderGetNode` | ✅ | [imgui_docking_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_docking_gm.cpp#L119) | - |
@@ -417,18 +417,18 @@ Below is a table of non-standard functions made specifically for ImGui
 | `ImGui.CalcTextHeight(text, hide_text_after_double_hash, wrap_width)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L364) | - |
 | `ImGui.PushAllowKeyboardFocus(allow_keyboard_focus)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L376) | - |
 | `ImGui.PopAllowKeyboardFocus()` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L383) | - |
-| `ImGui.PushButtonRepeat(_repeat)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L396) | - |
-| `ImGui.PopButtonRepeat()` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L403) | - |
-| `ImGui.ConfigFlagsGet()` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L413) | - |
-| `ImGui.IniFilename(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L421) | - |
-| `ImGui.WantSaveIniSettings(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L436) | - |
-| `ImGui.ConfigFlagsSet(flags)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L501) | - |
-| `ImGui.ConfigFlagToggle(flag)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L509) | - |
-| `ImGui.GetViewportID(vp)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L524) | - |
-| `ImGui.WantKeyboardCapture(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L609) | - |
-| `ImGui.WantMouseCapture(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L624) | - |
-| `ImGui.WantTextInput(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L639) | - |
-| `ImGui.WantMouseCaptureUnlessPopupClose(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L654) | - |
+| `ImGui.PushButtonRepeat(_repeat)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L403) | - |
+| `ImGui.PopButtonRepeat()` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L410) | - |
+| `ImGui.ConfigFlagsGet()` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L420) | - |
+| `ImGui.IniFilename(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L428) | - |
+| `ImGui.WantSaveIniSettings(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L443) | - |
+| `ImGui.ConfigFlagsSet(flags)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L508) | - |
+| `ImGui.ConfigFlagToggle(flag)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L516) | - |
+| `ImGui.GetViewportID(vp)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L531) | - |
+| `ImGui.WantKeyboardCapture(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L645) | - |
+| `ImGui.WantMouseCapture(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L660) | - |
+| `ImGui.WantTextInput(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L675) | - |
+| `ImGui.WantMouseCaptureUnlessPopupClose(val)` | [imgui_api_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_api_gm.cpp#L690) | - |
 | `ImGui.DockBuilderGetCentralNode(node_id)` | [imgui_docking_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_docking_gm.cpp#L126) | - |
 | `ImGui.DragFloatN(label, v, v_speed, v_min, v_max, format, flags, count)` | [imgui_drag_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_drag_gm.cpp#L94) | - |
 | `ImGui.DragIntN(label, v, v_speed, v_min, v_max, format, flags, count)` | [imgui_drag_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_drag_gm.cpp#L237) | - |

@@ -26,7 +26,7 @@ imgui_window = ImGui.__Window; // Capture the created gamewindow.
 
 // Optional: Extensions
 imext = {
-	node_editor: true,
+	node_editor: false,
 };
 
 /// NodeEditor

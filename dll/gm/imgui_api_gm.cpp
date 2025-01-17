@@ -393,6 +393,13 @@ GMFUNC(__imgui_set_keyboard_focus_here) {
 	Result.kind = VALUE_UNDEFINED;
 }
 
+GMFUNC(__imgui_set_nav_cursor_visible) {
+	bool visible = YYGetBool(arg, 0);
+
+	ImGui::SetNavCursorVisible(visible);
+	Result.kind = VALUE_UNDEFINED;
+}
+
 GMFUNC(__imgui_push_button_repeat) {
 	bool repeat = YYGetBool(arg, 0);
 
@@ -536,6 +543,35 @@ GMFUNC(__imgui_log_text) {
 	const char* text = YYGetString(arg, 0);
 
 	ImGui::LogText(text);
+	Result.kind = VALUE_UNDEFINED;
+}
+
+GMFUNC(__imgui_get_clipboard_text) {
+	const char* text = ImGui::GetClipboardText();
+	Result.kind = VALUE_STRING;
+	YYCreateString(&Result, text);
+}
+
+GMFUNC(__imgui_set_clipboard_text) {
+	RValue* val = &arg[0];
+	GMHINT(String)
+	if (val->kind == VALUE_STRING) {
+		ImGui::SetClipboardText(val->GetString());
+	}
+	Result.kind = VALUE_UNDEFINED;
+}
+
+GMFUNC(__imgui_debug_log) {
+	RValue* fmt = &arg[0];
+	GMHINT(String)
+	RValue* args = &arg[1];
+	GMHINT(Array)
+
+	if (fmt->kind == VALUE_STRING) {
+		if (args->kind == VALUE_ARRAY) {
+			ImGui::DebugLog(fmt->GetString(), args);
+		}
+	}
 	Result.kind = VALUE_UNDEFINED;
 }
 

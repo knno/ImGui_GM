@@ -404,6 +404,14 @@ function ImGui() constructor {
 		return __imgui_set_keyboard_focus_here(offset);
 	}
 
+	/// @function SetNavCursorVisible
+	/// @param {Bool} _visible
+	/// @context ImGui
+	/// @return {Undefined}
+	static SetNavCursorVisible = function(_visible) {
+		return __imgui_set_nav_cursor_visible(_visible);
+	}
+
 	/// @function PushButtonRepeat
 	/// @param {Bool} _repeat
 	/// @context ImGui
@@ -524,6 +532,30 @@ function ImGui() constructor {
 	/// @return {Undefined}
 	static LogText = function(text) {
 		return __imgui_log_text(text);
+	}
+
+	/// @function GetClipboardText
+	/// @context ImGui
+	/// @return {String}
+	static GetClipboardText = function() {
+		return __imgui_get_clipboard_text();
+	}
+
+	/// @function SetClipboardText
+	/// @param {String} val
+	/// @context ImGui
+	/// @return {Undefined}
+	static SetClipboardText = function(val) {
+		return __imgui_set_clipboard_text(val);
+	}
+
+	/// @function DebugLog
+	/// @param {String} fmt
+	/// @param {Array} args
+	/// @context ImGui
+	/// @return {Undefined}
+	static DebugLog = function(fmt, args) {
+		return __imgui_debug_log(fmt, args);
 	}
 
 	/// @function LogToClipboard

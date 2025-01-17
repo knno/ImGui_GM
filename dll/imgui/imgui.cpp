@@ -1,4 +1,4 @@
-// dear imgui, v1.91.8 WIP
+// dear imgui, v1.91.7
 // (main code and documentation)
 
 // Help:
@@ -5269,7 +5269,6 @@ void ImGui::UpdateHoveredWindowAndCaptureFlags()
 }
 
 // Called once a frame. Followed by SetCurrentFont() which sets up the remaining data.
-// FIXME-VIEWPORT: the concept of a single ClipRectFullscreen is not ideal!
 static void SetupDrawListSharedData()
 {
     ImGuiContext& g = *GImGui;

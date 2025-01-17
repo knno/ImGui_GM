@@ -1,5 +1,5 @@
 {
-  "$GMProject":"v1",
+  "$GMProject":"",
   "%Name":"ImGui_GM",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -16,7 +16,6 @@
     {"$GMFolder":"","%Name":"ImExt","folderPath":"folders/ImGui_GM/Extensions/ImExt.yy","name":"ImExt","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Main","folderPath":"folders/ImGui_GM/Main.yy","name":"Main","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"LICENSE.txt","CopyToMask":-1,"filePath":"datafiles/fonts","name":"LICENSE.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Roboto-Regular.ttf","CopyToMask":-1,"filePath":"datafiles/fonts","name":"Roboto-Regular.ttf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -24,7 +23,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1300.0.720",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"ImGui_GM",
   "resources":[

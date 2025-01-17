@@ -1,7 +1,7 @@
 /**
 *  This script includes snake_case function defintions for ImGui_GM, as an alternative to the namespaced convention
 *  To use, just drop this script into your project with ImGui_GM
-*  Generated at 1/17/2025, 1:03:01 AM
+*  Generated at 1/17/2025, 1:16:54 PM
 */
 
 /// @function imgui_initialize
@@ -375,6 +375,13 @@ function imgui_set_keyboard_focus_here(offset=0) {
 	return __imgui_set_keyboard_focus_here(offset);
 }
 
+/// @function imgui_set_nav_cursor_visible
+/// @param {Bool} _visible
+/// @return {Undefined}
+function imgui_set_nav_cursor_visible(_visible) {
+	return __imgui_set_nav_cursor_visible(_visible);
+}
+
 /// @function imgui_push_button_repeat
 /// @param {Bool} _repeat
 /// @return {Undefined}
@@ -479,6 +486,27 @@ function imgui_get_viewport_id(vp) {
 /// @return {Undefined}
 function imgui_log_text(text) {
 	return __imgui_log_text(text);
+}
+
+/// @function imgui_get_clipboard_text
+/// @return {String}
+function imgui_get_clipboard_text() {
+	return __imgui_get_clipboard_text();
+}
+
+/// @function imgui_set_clipboard_text
+/// @param {String} val
+/// @return {Undefined}
+function imgui_set_clipboard_text(val) {
+	return __imgui_set_clipboard_text(val);
+}
+
+/// @function imgui_debug_log
+/// @param {String} fmt
+/// @param {Array} args
+/// @return {Undefined}
+function imgui_debug_log(fmt, args) {
+	return __imgui_debug_log(fmt, args);
 }
 
 /// @function imgui_log_to_clipboard

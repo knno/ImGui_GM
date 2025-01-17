@@ -28,12 +28,6 @@
     <Filter Include="ImGui\Internal">
       <UniqueIdentifier>{ECBD7FD7-D88B-73DD-C11F-E403AD8C4F42}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Wrapper">
-      <UniqueIdentifier>{E6F7D03D-52D7-4FD9-5BEF-DAAFC74DB63A}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Wrapper\imgui_node_editor">
-      <UniqueIdentifier>{BB5EE419-2721-18A4-70D1-A630DCD2F081}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Extension_Interface.h" />
@@ -205,7 +199,7 @@
       <Filter>ImExt\imgui_node_editor\extension</Filter>
     </ClCompile>
     <ClCompile Include="imext\imgui_node_editor\imext_node_editor_gm.cpp">
-      <Filter>Wrapper\imgui_node_editor</Filter>
+      <Filter>ImExt\imgui_node_editor</Filter>
     </ClCompile>
     <ClCompile Include="imgui\imgui.cpp">
       <Filter>ImGui\Internal</Filter>
