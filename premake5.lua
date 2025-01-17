@@ -30,8 +30,8 @@ project "imgui_gm"
     vpaths {
         ["Configs"] = {"dll/imext/config.h", },
 
-        ["ImGui/GM"] = {"dll/gm/**.h", "dll/gm/**.c", "dll/gm/**.cpp", },
         ["Wrapper/Base"] = {"dll/gm/*_gm.cpp", },
+        ["ImGui/GM"] = {"dll/gm/**.h", "dll/gm/**.c", "dll/gm/**.cpp", },
         ["ImGui/Internal"] = {
             "dll/imgui/**.h", "dll/imgui/**.c", "dll/imgui/**.cpp",
         },

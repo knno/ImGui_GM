@@ -9,6 +9,7 @@ function ImGui() constructor {
 	static Ext = {
 		NodeEditor: new ImExtNodeEditor(),
 	}
+	/// EndSection Extensions
 
 	/// @section Binds
 	/// @function CreateContext

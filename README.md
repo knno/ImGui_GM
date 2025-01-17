@@ -112,6 +112,16 @@ cd ..
 
 - Upon building inside of Visual Studio, the `tools/brief/main.js` script will be called. This script collects any `.cpp` files ending in "`_gm.cpp`" (*Any uses of `GMFUNC` outside of files ending in `_gm.cpp` **will not** be read*) and parses out functions defined using the `GMFUNC` macro. These parsed functions are then added to the `extensions/ImGui_GM/ImGui_GM.yy` file and static methods are created in the `@section Binds` section of the `scripts/ImGui/ImGui.gml` file automatically. You can use the various macros to define attributes for wrapped functions and their arguments. See [`brief/Wrapper.js`](https://github.com/knno/ImGui_GM/blob/main/tools/brief/Wrapper.js)'s `modifier` method for how various attributes are handled.
 
+- To build without any extensions:
+  - Remove `dll/imext/config.h` extension definitions
+  - Run `premake5 vs2022`
+  - Use `NAME=vanilla` when making the package.yymps
+
+- Bundling the package requires the bundle.json file specified as environment variable:
+  ```bash
+  NAME=bundle node tools/bundle/main.js
+  NAME=vanilla node tools/bundle/main.js # For no extensions build
+  ```
 ---
 
 # Coverage

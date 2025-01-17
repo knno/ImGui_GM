@@ -24,9 +24,9 @@ ImGui.__Initialize(_configs); // Note that this creates a default window and sta
 imgui_state = ImGui.__State; // Capture the created state.
 imgui_window = ImGui.__Window; // Capture the created gamewindow.
 
-// Optional: Extensions
+/// Optional: Extensions
 imext = {
-	node_editor: false,
+	node_editor: (asset_get_index("ImExtNodeEditor") != -1),
 };
 
 /// NodeEditor
