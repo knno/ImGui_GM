@@ -44,7 +44,7 @@ class Configuration {
     /**
      * @description Spacing character used for writing generated code
      */
-    static SPACING = "	";
+    static SPACING = "    ";
 
     /**
      * @description If true, scanner class will retain "Semicolon" tokens

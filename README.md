@@ -114,6 +114,7 @@ cd ..
 
 - To build without any extensions:
   - Remove `dll/imext/config.h` extension definitions
+  - Modify premake5.lua (remove extensions filters)
   - Run `premake5 vs2022`
   - Use `NAME=vanilla` when making the package.yymps
 

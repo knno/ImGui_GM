@@ -14,7 +14,7 @@ operating_system = environment_get_variable("OS");
 ini_filename = "";
 
 /// Optional: Set up the extension before initialization.
-//ImGui.__GFlags &= ~ImGuiGFlags.GM; // Uncomment to use DX11 renderer.
+// ImGui.__GFlags &= ~ImGuiGFlags.GM; // Uncomment to use DX11 renderer.
 
 /// Optional: Define common config flags
 var _configs = ImGuiConfigFlags.DockingEnable | ImGuiConfigFlags.ViewportsEnable;
@@ -26,15 +26,15 @@ imgui_window = ImGui.__Window; // Capture the created gamewindow.
 
 /// Optional: Extensions
 imext = {
-	node_editor: (asset_get_index("ImExtNodeEditor") != -1),
+    node_editor: (asset_get_index("ImExtNodeEditor") != -1),
 };
 
 /// NodeEditor
 if imext.node_editor == true {
-	ImGui.Ext.NodeEditor.Initialize();
-	if (ImGui.Ext.NodeEditor.__Initialized) {
-		imext.node_editor = ImGui.Ext.NodeEditor.CreateEditor();
-	}
+    ImGui.Ext.NodeEditor.Initialize();
+    if (ImGui.Ext.NodeEditor.__Initialized) {
+        imext.node_editor = ImGui.Ext.NodeEditor.CreateEditor();
+    }
 }
 
 /// Optional: load and save ini file in a custom path.
@@ -90,9 +90,9 @@ init = false; // Set up docking
 
 _static = undefined;
 try {
-	_static = static_get(ImGui);
+    _static = static_get(ImGui);
 } catch (e) {
-	_static = undefined;
+    _static = undefined;
 }
 
 col = c_blue;                     // for TextColored
@@ -117,15 +117,15 @@ plot_val = [];
 plot_val2 = [];
 
 for(var i = 0; i < 12; i++) {
-	array_push(plot_val, irandom(255));
-	array_push(plot_val2, irandom(255));
+    array_push(plot_val, irandom(255));
+    array_push(plot_val2, irandom(255));
 }
 
 drag_mode = 0;
 drag_names = [
-	"Bobby", "Beatrice", "Betty",
-	"Brianna", "Barry", "Bernard",
-	"Bibi", "Blaine", "Bryn"
+    "Bobby", "Beatrice", "Betty",
+    "Brianna", "Barry", "Bernard",
+    "Bibi", "Blaine", "Bryn"
 ];
  
 tab1 = true;

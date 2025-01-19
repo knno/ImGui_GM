@@ -139,7 +139,7 @@ class Processor {
         }
         return token;
     }
-    
+
     token_templates(reader, token) {
         if (token.Type === Token.name("<")) {
             const next = reader.peek();
@@ -191,7 +191,7 @@ class Processor {
         }
         return token;
     }
-    
+
     token_const(reader, token) {
         if (token.Type === "Keyword" && token.Literal === "const") {
             const next = reader.peek();

@@ -83,7 +83,7 @@ class FileEditor {
         }
 
         if (this.Immutable) throw `Could not commit file: "${this.Name}", file is marked as immutable`;
-        
+
         try {
             fs.writeFileSync(this.File + (Configuration.USE_TEST ? ".test" : ""), this.Content, {encoding: "utf-8"});
             this.Hash = crypto.createHash("md5").update(this.Content).digest("hex");

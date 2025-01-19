@@ -34,7 +34,7 @@ function ImGuiExtMethodCall(method_name=undefined, ext_name=undefined, _args=und
         if (_cond) {
             _ext_m = _ext[$ method_name];
             if (is_method(_ext_m)) {
-				if (!is_undefined(_args)) {if (!is_array(_args)) {_args = [_args];}}
+                if (!is_undefined(_args)) {if (!is_array(_args)) {_args = [_args];}}
                 if (is_array(_args)) method_call(_ext_m, _args) else _ext_m();
             }
         }
@@ -77,22 +77,22 @@ function ImGuiBaseMainWindow() constructor {
 function ImGuiState() constructor {
     
     enum StateUpdateFlags {
-    	None = 0,
-    	DisplaySize = 1 << 0,
+        None = 0,
+        DisplaySize = 1 << 0,
         DisplayScale = 1 << 1,
-    	MousePos = 1 << 21,
-    	Framerate = 1 << 3,
-    	Time = 1 << 4,
-    	CmdBuffer = 1 << 5,
-    	FontBuffer = 1 << 6,
-    	UpdateFont = 1 << 7,
+        MousePos = 1 << 21,
+        Framerate = 1 << 3,
+        Time = 1 << 4,
+        CmdBuffer = 1 << 5,
+        FontBuffer = 1 << 6,
+        UpdateFont = 1 << 7,
 
-    	Display = StateUpdateFlags.DisplaySize | StateUpdateFlags.DisplayScale,
-    	Input = StateUpdateFlags.MousePos,
-    	Engine = StateUpdateFlags.Framerate | StateUpdateFlags.Time,
-    	Renderer = StateUpdateFlags.CmdBuffer | StateUpdateFlags.FontBuffer | StateUpdateFlags.UpdateFont,
+        Display = StateUpdateFlags.DisplaySize | StateUpdateFlags.DisplayScale,
+        Input = StateUpdateFlags.MousePos,
+        Engine = StateUpdateFlags.Framerate | StateUpdateFlags.Time,
+        Renderer = StateUpdateFlags.CmdBuffer | StateUpdateFlags.FontBuffer | StateUpdateFlags.UpdateFont,
 
-    	All = StateUpdateFlags.Display | StateUpdateFlags.Input | StateUpdateFlags.Engine | StateUpdateFlags.Renderer,
+        All = StateUpdateFlags.Display | StateUpdateFlags.Input | StateUpdateFlags.Engine | StateUpdateFlags.Renderer,
     }
 
     var _os_info = os_get_info();
@@ -133,7 +133,7 @@ function ImGuiState() constructor {
 
         var _state = ImGui.__State;
 
-		if self.Engine.Context == pointer_null {
+        if self.Engine.Context == pointer_null {
             self.Engine.Context = ImGui.CreateContext();
         }
 
@@ -148,11 +148,11 @@ function ImGuiState() constructor {
         }
 
         self.Display.Width = display_get_width();
-		self.Display.Height = display_get_height();
-		self.Display.Font = -1;
-		self.Renderer.Surface = -1;
-		self.Renderer.CmdBuffer = buffer_exists(self.Renderer.CmdBuffer) ? self.Renderer.CmdBuffer : buffer_create(IMGUI_GM_BUFFER_SIZE, buffer_grow, 1);
-		self.Renderer.FontBuffer = buffer_exists(self.Renderer.FontBuffer) ? self.Renderer.FontBuffer :  buffer_create(IMGUI_GM_BUFFER_SIZE, buffer_grow, 1);
+        self.Display.Height = display_get_height();
+        self.Display.Font = -1;
+        self.Renderer.Surface = -1;
+        self.Renderer.CmdBuffer = buffer_exists(self.Renderer.CmdBuffer) ? self.Renderer.CmdBuffer : buffer_create(IMGUI_GM_BUFFER_SIZE, buffer_grow, 1);
+        self.Renderer.FontBuffer = buffer_exists(self.Renderer.FontBuffer) ? self.Renderer.FontBuffer :  buffer_create(IMGUI_GM_BUFFER_SIZE, buffer_grow, 1);
         self.Renderer.UpdateFont = true;
         
         self.Use();
@@ -223,41 +223,41 @@ function ImGuiState() constructor {
 
 // Used by Color*4 functions, use .Color to get BGR value for GM functions
 function ImColor(red, green=undefined, blue=undefined, alpha=1) constructor {
-	/*
-		ImColor(c_red);
-		ImColor(c_red, 0.5);
-		ImColor(255, 255, 255);
-		ImColor(128, 255, 255, 0.5);
-		ImColor(c_red | (128 << 24)); Alpha is most-significant byte, basically RGBA int
-	*/
-	a = alpha;
-	if (blue != undefined) {
-		r = red;
-		g = green;
-		b = blue;
-	} else {
-		r = color_get_red(red);
-		g = color_get_green(red);
-		b = color_get_blue(red);
-		
-		if (green != undefined) {
-			a = green;	
-		} else {
-			/// Feather ignore GM1044
-			var high = (red >> 24) & 0xFF;
-			if (high > 0) {
-				a = high / 0xFF;	
-			}
-		}
-	}
-	
-	static Color = function() {
-		return r | (g << 8) | (b << 16);
-	}
-	
-	static Alpha = function() {
-		return a;	
-	}
+    /*
+        ImColor(c_red);
+        ImColor(c_red, 0.5);
+        ImColor(255, 255, 255);
+        ImColor(128, 255, 255, 0.5);
+        ImColor(c_red | (128 << 24)); Alpha is most-significant byte, basically RGBA int
+    */
+    a = alpha;
+    if (blue != undefined) {
+        r = red;
+        g = green;
+        b = blue;
+    } else {
+        r = color_get_red(red);
+        g = color_get_green(red);
+        b = color_get_blue(red);
+        
+        if (green != undefined) {
+            a = green;    
+        } else {
+            /// Feather ignore GM1044
+            var high = (red >> 24) & 0xFF;
+            if (high > 0) {
+                a = high / 0xFF;    
+            }
+        }
+    }
+    
+    static Color = function() {
+        return r | (g << 8) | (b << 16);
+    }
+    
+    static Alpha = function() {
+        return a;    
+    }
 }
 
 /**
@@ -332,35 +332,35 @@ function ImGuiSelectionBasicStorage(size=0, preserve_order=undefined) constructo
 
 enum ImGuiGFlags {
     None = 0,
-	RENDERER_GM = 1 << 0,
-	IMPL_GM = 1 << 1,
-	IMPL_DX11 = 1 << 2,
-	IMPL_WIN32 = 1 << 3,
+    RENDERER_GM = 1 << 0,
+    IMPL_GM = 1 << 1,
+    IMPL_DX11 = 1 << 2,
+    IMPL_WIN32 = 1 << 3,
     GM = ImGuiGFlags.IMPL_GM | ImGuiGFlags.RENDERER_GM,
 }
 
 /// @section Enums
 /// These are manually imported and modified enums, for automatic enum exporting see the enums section of ImGui.gml
 /*
-	Used for encoding multiple returns from various wrappers (ImGui.Begin, ImGui.CollapsingHeader, etc)
-	Default is ImGuiReturnFlags.Return for all functions to make wrappers work as close to the library as possible
-	
-	Return: The return value of the library function
-	Pointer: Any reference passed to the library function and modified (this varies per-function; hopefully it all makes sense)
-	Both: ^
+    Used for encoding multiple returns from various wrappers (ImGui.Begin, ImGui.CollapsingHeader, etc)
+    Default is ImGuiReturnFlags.Return for all functions to make wrappers work as close to the library as possible
+    
+    Return: The return value of the library function
+    Pointer: Any reference passed to the library function and modified (this varies per-function; hopefully it all makes sense)
+    Both: ^
 */
 enum ImGuiReturnMask {
-	None = 0,            // Should be unused
-	Return = 1 << 0,
-	Pointer = 1 << 1,
-	Both = ImGuiReturnMask.Return | ImGuiReturnMask.Pointer
+    None = 0,            // Should be unused
+    Return = 1 << 0,
+    Pointer = 1 << 1,
+    Both = ImGuiReturnMask.Return | ImGuiReturnMask.Pointer
 }
 
 enum ImGuiTextureType {
-	Raw = 0,
-	Sprite = 1 << 0,
-	Surface = 1 << 1,
-	Font = 1 << 2
+    Raw = 0,
+    Sprite = 1 << 0,
+    Surface = 1 << 1,
+    Font = 1 << 2
 }
 
 // slightly modified from imgui.h
@@ -585,5 +585,6 @@ function __imgui_create_input_mapping() {
     arr[ImGuiKey.X] = ord("X");
     arr[ImGuiKey.Y] = ord("Y");
     arr[ImGuiKey.Z] = ord("Z");
+    arr[ImGuiKey.GraveAccent] = 192;
     return arr;
 }

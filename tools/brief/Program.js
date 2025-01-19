@@ -34,7 +34,7 @@ class Program {
         const root_imext = root + "imext/";
 
         Logger.info("Reading ImGui header...", {type: "ImGui"});
-        
+
         const header = this.parseHeader(new FileEditor(root_imgui + "imgui.h"));
         const header_internal = this.parseHeader(new FileEditor(root_imgui + "imgui_internal.h"));
         header.internal_functions = header_internal.functions;
@@ -120,7 +120,7 @@ class Program {
 
         Logger.debug("Updating ImGui extensions scripts...", {type: "ImExt"});
         Object.entries(exts).forEach(([extDirective, extData]) => {
-            
+
             let extNameP = extData.NameP;
             let extN = `${Configuration.IMEXT_PREFIX}${extNameP}`;
             let extScript = `scripts/${extN}/${extN}.gml`;
@@ -160,7 +160,7 @@ class Program {
                 const extNameP = extData.NameP;
                 const extHeader = extData._HeadersParsed;
                 const extWrappers = extData._Wrappers;
-                
+
                 const p = `extra/COVERAGE_${extNameO.toUpperCase()}.md`;
                 const fp = path.normalize(p);
                 if (!fs.existsSync(fp)) {
@@ -208,7 +208,7 @@ class Program {
         const defines = {};
         const tokens = new Processor(new Scanner(file.Content).Tokens).get();
         if (tokens.length === 0) throw `Could not read "${file.Name}", processed token list is empty`;
-        
+
         const reader = new TokenReader(tokens);
         while (!reader.end()) {
             const token = reader.advance();
@@ -272,7 +272,7 @@ class Program {
                         if (next.Type !== "Identifier" || (next.Literal !== namespace && namespace == "ImGui")) continue;
                         const more = reader.advance();
                         if (more.Type !== "BracePair") continue;
-                        
+
                         const children = TokenReader.flat(more.Children);
                         while (!children.end()) {
                             const token = children.advance();
@@ -332,7 +332,7 @@ class Program {
                             break;
                         }
                         if (!inner) throw `Could not parse "${file.Name}", expected ${Token.name("{}")} token for enum "${name}" at line ${token.Line}`;
-                        
+
                         // Always attempt to prevent enum clashing (e.g. with other extensions)?
                         let oldName = undefined;
                         if (!name.toLowerCase().startsWith("im")) {
@@ -346,9 +346,9 @@ class Program {
                         while (!children.end()) {
                             const token = children.advance();
                             const prev = children.previous();
-    
+
                             let prev_name;
-    
+
                             switch (token.Type) {
                                 case Token.name("="): {
                                     if (prev.Type !== "Identifier") throw `Could not parse "${file.Name}", expected Identifier token for enum "${name}" at line ${next.Line}`;
@@ -430,11 +430,11 @@ class Program {
             if (token && (token.Type === "FunctionDef" && token.Literal === keyword)) {
                 const name = token.Children[0];
                 if (!name || name.Type !== "Identifier") throw `Could not parse "${file.Name}", expected Identifier token for ${token.Literal} at line ${token.Line}`;
-                
+
                 const next = reader.advance();
                 if (!next || next.Type !== Token.name("{}")) throw `Could not parse "${file.Name}", expected ${Token.name("{}")} token for ${token.Literal} at line ${token.Line}`;
                 if (!next.Children || next.Children.length === 0) throw `Could not parse "${file.Name}", expected content inside ${Token.name("{}")} for ${token.Literal} at line ${token.Line}`;
-                
+
                 const wrapper = new Wrapper(name.Literal, file.Name, token.Line);
                 wrapper.FileRelpath = path.dirname(file.File) + path.sep + path.basename(file.File);
                 wrapper.Context = context;
@@ -455,25 +455,25 @@ class Program {
                                         children.advance();
                                         continue;
                                     }
-    
+
                                     switch (right.Type) {
                                         case "FunctionCall": {
                                             if (right.Literal.startsWith("YYGet")) {
                                                 const inner = right.Children.filter(e => e.Type !== Token.name(","));
                                                 if (inner.length < 2) throw `Could not parse "${file.Name}", expected at least 2 arguments for call to ${right.Literal} at line ${right.Line}`;
-                                                
+
                                                 const ident = inner[0];
                                                 if (ident.Type !== "Identifier" || ident.Literal !== "arg") throw `Could not parse "${file.Name}", expected "arg" variable but got ${ident.Literal} as first argument for call to ${right.Literal} at line ${right.Line}`;
-                                                
+
                                                 const ind = inner[1];
                                                 if (ind.Type !== "Number") throw `Could not parse "${file.Name}", expected Number but got ${ind.Type} as second argument for call to ${right.Literal} at line ${right.Line}`;
-                                                
+
                                                 wrapper.argument(left.Literal, ind.Literal, right.Literal);
                                                 children.advance();
                                             }
                                             break;
                                         }
-    
+
                                         case "AddressOf":
                                         case "Identifier": {
                                             if (right.Literal === "arg") {
@@ -481,7 +481,7 @@ class Program {
                                                 if (more.Type === Token.name("[]")) {
                                                     const inner = more.Children[0];
                                                     if (inner.Type !== "Number") throw `Could not parse "${file.Name}", expected Number but got ${inner.Type} as index for argument array at line ${right.Line}`;
-                                                    
+
                                                     if (left.Literal === "Result") wrapper.return_arg(inner.Literal);
                                                     else wrapper.argument(left.Literal, inner.Literal);
                                                     children.advance();
@@ -500,7 +500,7 @@ class Program {
                             if (left.Type === "Identifier" && left.Literal === "ImGui") {
                                 const right = children.peek();
                                 if (right.Type !== "FunctionCall") throw `Could not parse "${file.Name}", expected FunctionCall but got ${right.Type} after scope resolution token at line ${token.Line}`;
-                                
+
                                 wrapper.calls(right.Literal);
                                 children.advance();
                             }
@@ -584,7 +584,7 @@ class Program {
 
         const content = [];
         const ns_enums = {};
-        
+
         for(const key in enums) {
             let name = key.endsWith("_") ? key.slice(0,-1) : key;
             if (!name.toLowerCase().startsWith("im")) {
@@ -612,7 +612,7 @@ class Program {
             }
             this._data.enums.push(name);
             enum_def += `${Configuration.SPACING}enum ${name} {\n`;
-            
+
             const members = Object.keys(enums[key]);
             for(let i = 0; i < members.length; i++) {
                 const value = enums[key][members[i]];
@@ -754,7 +754,7 @@ class Program {
             if (internal_functions_names.includes(e.Name)) {
                 e.IsInternal = true;
             }
-        
+
             if (e.IsWrapped) wrapped++;
         });
 
@@ -843,7 +843,7 @@ class Program {
         let content = `/**\n*  This script includes snake_case function defintions for ImGui_GM, as an alternative to the namespaced convention\n*  To use, just drop this script into your project with ImGui_GM\n*  Generated at ${new Date().toLocaleString()}\n*/\n\n`;
         ["Initialize", "NewFrame", "EndFrame", "Render", "Draw", "Shutdown"].forEach(e => {
             const name = "imgui_" + Util.toSnakecase(e);
-            content += `/// @function ${name}\nfunction ${name}() {\n	return ImGui.__${e}();\n}\n\n`;
+            content += `/// @function ${name}\nfunction ${name}() {\n${Configuration.SPACING}return ImGui.__${e}();\n}\n\n`;
         });
 
         wrappers.forEach(e => {

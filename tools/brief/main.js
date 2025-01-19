@@ -11,7 +11,7 @@ const Logger = require("./Logger");
 const args = ["dll/", "extensions/ImGui_GM/ImGui_GM.yy", "scripts/ImGui/ImGui.gml"];
 try {
     if (process.cwd().endsWith("dll")) process.chdir("../");
-    
+
     const start = performance.now();
     if (Program.main(...args) === false) {
         throw `An unknown error has occured`;

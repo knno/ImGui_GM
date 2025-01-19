@@ -47,12 +47,12 @@ class Wrapper {
         for(let i = 0; i < this.Arguments.length; i++) {
             const arg = this.Arguments[i];
             if (!arg) throw `Could not read undefined argument at index ${i} in ${this.Name} at line ${this.Line}`;
-            
+
             if (Wrapper.reserved.includes(arg.Name)) {
                 Logger.warning(`Reserved keyword "${arg.Name}" found in arguments for wrapper "${this.Name}", renaming to "_${arg.Name}"`, {type: "W002"});
                 arg.Name = "_" + arg.Name;
             }
-            
+
             if (arg.Passthrough !== undefined) {
                 let passthrough = arg.Passthrough;
                 this.Arguments.forEach((e, ind) => {
@@ -120,7 +120,7 @@ class Wrapper {
             // Arguments
             case "GMDEFAULT": {
                 if (this.ArgumentIndex === -1) throw `Could not handle ${token.Literal} modifier, target argument is unset at line ${token.Line}`;
-                
+
                 const arg = this.Arguments[this.ArgumentIndex];
                 arg.Default = token.flatten(false);
                 return true;
@@ -128,7 +128,7 @@ class Wrapper {
 
             case "GMPASSTHROUGH": {
                 if (this.ArgumentIndex === -1) throw `Could not handle ${token.Literal} modifier, target argument is unset at line ${token.Line}`;
-                
+
                 const arg = this.Arguments[this.ArgumentIndex];
                 arg.Passthrough = token.flatten(false);
                 return true;
@@ -136,7 +136,7 @@ class Wrapper {
 
             case "GMHIDDEN": {
                 if (this.ArgumentIndex === -1) throw `Could not handle ${token.Literal} modifier, target argument is unset at line ${token.Line}`;
-                
+
                 const arg = this.Arguments[this.ArgumentIndex];
                 arg.Hidden = true;
                 return true;
@@ -157,7 +157,7 @@ class Wrapper {
                                 }
                                 break;
                             }
-                            
+
                             default: {
                                 this.Return = token.flatten(false);
                                 Logger.debug("Overwriting return type for " + this.Name + " as " + this.Return);
@@ -180,7 +180,7 @@ class Wrapper {
 
             case "GMHINT": {
                 if (this.ArgumentIndex === -1) throw `Could not handle ${token.Literal} modifier, target argument is unset at line ${token.Line}`;
-                
+
                 const arg = this.Arguments[this.ArgumentIndex];
                 arg.Type = token.flatten(false);
                 return true;
@@ -236,7 +236,7 @@ class Wrapper {
                     }
                 }
             }
-            
+
             str += Configuration.SPACING.repeat(spacing) + `/// @param {${arg.Type}}`;
             if (arg.Default !== undefined) {
                 str += ` [${arg.Name}=${Wrapper.fix(arg.Default)}]`;

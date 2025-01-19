@@ -253,7 +253,7 @@ class Scanner {
             if (Scanner.Keywords.includes(ident)) return this.token("Keyword", ident);
             if (Scanner.Directives.includes(ident)) return this.token("PreprocessorDirective", ident);
         }
-        
+
         return this.token("Identifier", undefined);
     }
 
