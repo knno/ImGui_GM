@@ -616,7 +616,13 @@ class Program {
             const members = Object.keys(enums[key]);
             for(let i = 0; i < members.length; i++) {
                 const value = enums[key][members[i]];
-                const member = members[i].replaceAll(name + "_", "");
+                let member = members[i];
+                if (name.endsWith("Flags")) {
+                    if (!member.startsWith(name)) {
+                        member = member.replace(name.replace(/Flags$/, ""), name);
+                    }
+                }
+                member = member.replaceAll(name + "_", "");
                 if (value === 0) {
                     enum_def += `${Configuration.SPACING.repeat(2)}${member},\n`;
                     continue;

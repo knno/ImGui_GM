@@ -96,8 +96,8 @@ inline ImCubicBezierIntersectResult ImCubicBezierLineIntersect(const ImCubicBezi
 // Adaptive Cubic Bezier subdivision.
 enum ImCubicBezierSubdivideFlags
 {
-    ImCubicBezierSubdivideFlags_None        = 0,
-    ImCubicBezierSubdivideFlags_SkipFirst   = 1
+    ImCubicBezierSubdivide_None        = 0,
+    ImCubicBezierSubdivide_SkipFirst   = 1
 };
 
 struct ImCubicBezierSubdivideSample
@@ -108,13 +108,13 @@ struct ImCubicBezierSubdivideSample
 
 using ImCubicBezierSubdivideCallback = void (*)(const ImCubicBezierSubdivideSample& p, void* user_pointer);
 
-inline void ImCubicBezierSubdivide(ImCubicBezierSubdivideCallback callback, void* user_pointer, const ImVec2& p0, const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, float tess_tol = -1.0f, ImCubicBezierSubdivideFlags flags = ImCubicBezierSubdivideFlags_None);
-inline void ImCubicBezierSubdivide(ImCubicBezierSubdivideCallback callback, void* user_pointer, const ImCubicBezierPoints& curve, float tess_tol = -1.0f, ImCubicBezierSubdivideFlags flags = ImCubicBezierSubdivideFlags_None);
+inline void ImCubicBezierSubdivide(ImCubicBezierSubdivideCallback callback, void* user_pointer, const ImVec2& p0, const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, float tess_tol = -1.0f, ImCubicBezierSubdivideFlags flags = ImCubicBezierSubdivide_None);
+inline void ImCubicBezierSubdivide(ImCubicBezierSubdivideCallback callback, void* user_pointer, const ImCubicBezierPoints& curve, float tess_tol = -1.0f, ImCubicBezierSubdivideFlags flags = ImCubicBezierSubdivide_None);
 
 
 // F has signature void(const ImCubicBezierSubdivideSample& p)
-template <typename F> inline void ImCubicBezierSubdivide(F& callback, const ImVec2& p0, const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, float tess_tol = -1.0f, ImCubicBezierSubdivideFlags flags = ImCubicBezierSubdivideFlags_None);
-template <typename F> inline void ImCubicBezierSubdivide(F& callback, const ImCubicBezierPoints& curve, float tess_tol = -1.0f, ImCubicBezierSubdivideFlags flags = ImCubicBezierSubdivideFlags_None);
+template <typename F> inline void ImCubicBezierSubdivide(F& callback, const ImVec2& p0, const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, float tess_tol = -1.0f, ImCubicBezierSubdivideFlags flags = ImCubicBezierSubdivide_None);
+template <typename F> inline void ImCubicBezierSubdivide(F& callback, const ImCubicBezierPoints& curve, float tess_tol = -1.0f, ImCubicBezierSubdivideFlags flags = ImCubicBezierSubdivide_None);
 
 // Fixed step Cubic Bezier subdivision.
 struct ImCubicBezierFixedStepSample

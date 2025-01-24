@@ -29,8 +29,8 @@
 
 
 //------------------------------------------------------------------------------
-# include "../../../imgui/imgui.h"
-# include "../../../imgui/imgui_internal.h"
+# include <imgui.h>
+# include <imgui_internal.h>
 # include "imgui_extra_math.h"
 # include "imgui_bezier_math.h"
 # include "imgui_canvas.h"

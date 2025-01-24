@@ -14,6 +14,8 @@ project "imgui_gm"
     targetdir "extensions/ImGui_GM/"
     defines { "GDKEXTENSION_EXPORTS", "__YYDEFINE_EXTENSION_FUNCTIONS__" }
 
+    includedirs { "dll", "dll/imgui" }
+
     files {
         "dll/*.h",
         "dll/*.cpp",

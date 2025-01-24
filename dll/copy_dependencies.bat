@@ -14,14 +14,14 @@ copy "..\thirdparty\imgui\backends\imgui_impl_dx11.*"
 copy "..\thirdparty\imgui\backends\imgui_impl_win32.*"
 cd ..
 
-Rem Copy ImExt files (once-per-extension)
+Rem Copy ImExt files
 
 :: imgui_node_editor
-:: cd imext\imgui_node_editor\extension
-:: copy "..\..\..\thirdparty\imgui-node-editor\*.cpp"
-:: copy "..\..\..\thirdparty\imgui-node-editor\*.h"
-:: copy "..\..\..\thirdparty\imgui-node-editor\*.inl"
-:: cd ..\..\..
+cd imext\imgui_node_editor\extension
+copy "..\..\..\thirdparty\imgui-node-editor\*.cpp"
+copy "..\..\..\thirdparty\imgui-node-editor\*.h"
+copy "..\..\..\thirdparty\imgui-node-editor\*.inl"
+cd ..\..\..
 
 Rem Copy GameMaker files (once)
 

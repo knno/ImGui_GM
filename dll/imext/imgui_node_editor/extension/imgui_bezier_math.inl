@@ -546,7 +546,7 @@ inline void ImCubicBezierSubdivide(ImCubicBezierSubdivideCallback callback, void
     tesselator.TesselationTollerance = tess_tol * tess_tol;
     tesselator.Flags                 = flags;
 
-    if (!(tesselator.Flags & ImCubicBezierSubdivideFlags_SkipFirst))
+    if (!(tesselator.Flags & ImCubicBezierSubdivide_SkipFirst))
         tesselator.Commit(curve.P0, ImCubicBezierTangent(curve, 0.0f));
 
     tesselator.Subdivide(curve, 0);

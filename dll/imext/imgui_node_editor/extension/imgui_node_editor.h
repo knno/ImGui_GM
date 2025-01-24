@@ -16,7 +16,7 @@
 
 //------------------------------------------------------------------------------
 #define IMGUI_DEFINE_MATH_OPERATORS
-# include "../../../imgui/imgui.h"
+# include <imgui.h>
 # include <cstdint> // std::uintXX_t
 # include <utility> // std::move
 
@@ -524,7 +524,7 @@ struct PinId final: Details::SafePointerType<PinId>
 
 //------------------------------------------------------------------------------
 } // namespace Editor
-}; // namespace ax
+} // namespace ax
 
 
 //------------------------------------------------------------------------------
