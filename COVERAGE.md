@@ -7,9 +7,9 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 # Coverage
 
 - ![coverage](https://badgen.net/https/raw.githubusercontent.com/knno/ImGui_GM/main/extra/badges/coverage.json?icon=awesome)
-- 402 out of 445 supported API functions wrapped (**90% complete**)
-- 402 out of 809 total API functions wrapped (*50% complete*)
-- Note that 379 out of 809 API functions are not supported (46%)
+- 402 out of 430 supported API functions wrapped (**93% complete**)
+- 402 out of 445 total API functions wrapped (*90% complete*)
+- Note that 15 out of 445 API functions are not supported (3%)
 
 | Function | Wrapped | Link | Notes |
 | -------- | ------- | ---- | ----- |
@@ -195,11 +195,11 @@ This is an automatically generated file that keeps track of wrapper coverage of 
 | `ImGui::InputScalar` | ❌ | - | - |
 | `ImGui::InputScalarN` | ❌ | - | - |
 | `ImGui::ColorEdit3` | ✅ | [imgui_color_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_color_gm.cpp#L6) | - |
-| `ImGui::ColorEdit4` | ✅ | [imgui_color_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_color_gm.cpp#L30) | - |
-| `ImGui::ColorPicker3` | ✅ | [imgui_color_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_color_gm.cpp#L18) | - |
-| `ImGui::ColorPicker4` | ✅ | [imgui_color_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_color_gm.cpp#L60) | - |
-| `ImGui::ColorButton` | ✅ | [imgui_color_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_color_gm.cpp#L90) | - |
-| `ImGui::SetColorEditOptions` | ✅ | [imgui_color_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_color_gm.cpp#L106) | - |
+| `ImGui::ColorEdit4` | ✅ | [imgui_color_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_color_gm.cpp#L32) | - |
+| `ImGui::ColorPicker3` | ✅ | [imgui_color_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_color_gm.cpp#L19) | - |
+| `ImGui::ColorPicker4` | ✅ | [imgui_color_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_color_gm.cpp#L63) | - |
+| `ImGui::ColorButton` | ✅ | [imgui_color_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_color_gm.cpp#L94) | - |
+| `ImGui::SetColorEditOptions` | ✅ | [imgui_color_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_color_gm.cpp#L111) | - |
 | `ImGui::TreeNode` | ✅ | [imgui_tree_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_tree_gm.cpp#L3) | - |
 | `ImGui::TreeNodeV` | ❌ | - | Unsupported, use `string` function in GameMaker for string formatting |
 | `ImGui::TreeNodeEx` | ✅ | [imgui_tree_gm.cpp](https://github.com/knno/ImGui_GM/blob/main/dll/gm/imgui_tree_gm.cpp#L10) | - |

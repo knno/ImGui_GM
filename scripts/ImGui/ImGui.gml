@@ -649,7 +649,7 @@ function ImGui() constructor {
     /// @function ColorEdit3
     /// @param {String} label
     /// @param {Real} col
-    /// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+    /// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
     /// @context ImGui
     /// @return {Real}
     static ColorEdit3 = function(label, col, flags=ImGuiColorEditFlags.None) {
@@ -659,7 +659,7 @@ function ImGui() constructor {
     /// @function ColorPicker3
     /// @param {String} label
     /// @param {Real} col
-    /// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+    /// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
     /// @context ImGui
     /// @return {Real}
     static ColorPicker3 = function(label, col, flags=ImGuiColorEditFlags.None) {
@@ -669,7 +669,7 @@ function ImGui() constructor {
     /// @function ColorEdit4
     /// @param {String} label
     /// @param {ImColor} col
-    /// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+    /// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
     /// @context ImGui
     /// @return {Bool}
     static ColorEdit4 = function(label, col, flags=ImGuiColorEditFlags.None) {
@@ -679,7 +679,7 @@ function ImGui() constructor {
     /// @function ColorPicker4
     /// @param {String} label
     /// @param {ImColor} col
-    /// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+    /// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
     /// @context ImGui
     /// @return {Bool}
     static ColorPicker4 = function(label, col, flags=ImGuiColorEditFlags.None) {
@@ -690,7 +690,7 @@ function ImGui() constructor {
     /// @param {String} desc_id
     /// @param {Real} color
     /// @param {Real} [alpha=1]
-    /// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+    /// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
     /// @param {Real} [width=0]
     /// @param {Real} [height=0]
     /// @context ImGui
@@ -700,7 +700,7 @@ function ImGui() constructor {
     }
 
     /// @function SetColorEditOptions
-    /// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+    /// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
     /// @context ImGui
     /// @return {Undefined}
     static SetColorEditOptions = function(flags=ImGuiColorEditFlags.None) {

@@ -1,7 +1,7 @@
 /**
 *  This script includes snake_case function defintions for ImGui_GM, as an alternative to the namespaced convention
 *  To use, just drop this script into your project with ImGui_GM
-*  Generated at 1/24/2025, 2:53:16 PM
+*  Generated at 1/27/2025, 1:30:10 AM
 */
 
 /// @function imgui_initialize
@@ -588,7 +588,7 @@ function imgui_want_mouse_unless_popup_close(val=undefined) {
 /// @function imgui_color_edit3
 /// @param {String} label
 /// @param {Real} col
-/// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+/// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
 /// @return {Real}
 function imgui_color_edit3(label, col, flags=ImGuiColorEditFlags.None) {
     return __imgui_color_edit3(label, col, flags);
@@ -597,7 +597,7 @@ function imgui_color_edit3(label, col, flags=ImGuiColorEditFlags.None) {
 /// @function imgui_color_picker3
 /// @param {String} label
 /// @param {Real} col
-/// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+/// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
 /// @return {Real}
 function imgui_color_picker3(label, col, flags=ImGuiColorEditFlags.None) {
     return __imgui_color_picker3(label, col, flags);
@@ -606,7 +606,7 @@ function imgui_color_picker3(label, col, flags=ImGuiColorEditFlags.None) {
 /// @function imgui_color_edit4
 /// @param {String} label
 /// @param {ImColor} col
-/// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+/// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
 /// @return {Bool}
 function imgui_color_edit4(label, col, flags=ImGuiColorEditFlags.None) {
     return __imgui_color_edit4(label, col, flags);
@@ -615,7 +615,7 @@ function imgui_color_edit4(label, col, flags=ImGuiColorEditFlags.None) {
 /// @function imgui_color_picker4
 /// @param {String} label
 /// @param {ImColor} col
-/// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+/// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
 /// @return {Bool}
 function imgui_color_picker4(label, col, flags=ImGuiColorEditFlags.None) {
     return __imgui_color_picker4(label, col, flags);
@@ -625,7 +625,7 @@ function imgui_color_picker4(label, col, flags=ImGuiColorEditFlags.None) {
 /// @param {String} desc_id
 /// @param {Real} color
 /// @param {Real} [alpha=1]
-/// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+/// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
 /// @param {Real} [width=0]
 /// @param {Real} [height=0]
 /// @return {Bool}
@@ -634,7 +634,7 @@ function imgui_color_button(desc_id, color, alpha=1, flags=ImGuiColorEditFlags.N
 }
 
 /// @function imgui_set_color_edit_options
-/// @param {Enum.ImGuiCol} [flags=ImGuiColorEditFlags.None]
+/// @param {Enum.ImGuiColorEditFlags} [flags=ImGuiColorEditFlags.None]
 /// @return {Undefined}
 function imgui_set_color_edit_options(flags=ImGuiColorEditFlags.None) {
     return __imgui_set_color_edit_options(flags);

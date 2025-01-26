@@ -1,6 +1,6 @@
 # ImGui_GM
 
-ImGui wrapper for modern GameMaker.
+An ImGui wrapper for modern GameMaker.
 
 ![issues](https://badgen.net/github/open-issues/knno/imgui_gm)
 ![coverage](https://badgen.net/https/raw.githubusercontent.com/knno/imgui_gm/main/extra/badges/coverage.json?icon=awesome)
@@ -25,7 +25,7 @@ There are various ways to use the **ImGui_GM** extension. Below we will see the 
 
 ## Prerequisites
 
-1. Import ImGui_GM.yymps
+Download and import the .yymps file.
 
 ## Basic Usage
 
@@ -55,7 +55,7 @@ Check out [`COVERAGE.md`](https://github.com/knno/ImGui_GM/blob/main/COVERAGE.md
 If there is anything missing, submit issues in this repository: [Click here to create an issue](https://github.com/knno/ImGui_GM/issues). 
 
 # Notes
-- Functions like `ImGui.Begin` may not return what you expect, see ["ImGuiReturnMask Usage"](https://github.com/knno/ImGui_GM/wiki/Usage-ImGuiReturnMask) for more info
+- Functions like `ImGui.Begin` may not return what you expect, see ["ImGuiReturnMask Usage"](https://github.com/knno/ImGui_GM/wiki/Usage#ImGuiReturnMask) for more info
 
 - Functions that accept an **array** of items as an argument (such as `ImGui.DragInt3`, `ImGui.SliderFloat2`, etc) will ***directly modify*** the given array. Keep this in mind when using them. Analogous functions that accept single elements (such as `ImGui.DrawInt`, `ImGui.SliderFloat`) ***will not*** make any changes directly to the value, and the return value should be used.
 

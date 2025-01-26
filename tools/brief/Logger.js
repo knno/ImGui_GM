@@ -27,7 +27,6 @@ function getLogger() {
  * Global logging class, all methods are static
  *
  * Written by Nommiin - https://github.com/Nommiin
- * Modified by knno - https://github.com/knno
  *
  */
 class Logger {

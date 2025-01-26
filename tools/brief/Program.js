@@ -14,7 +14,6 @@ const Util = require("./Util")
  * Reads specific C++ files and automatically creates wrapped functions for GameMaker
  * 
  * Written by Nommiin - https://github.com/Nommiin
- * Modified by knno - https://github.com/knno
  * 
  */ 
 class Program {
@@ -774,16 +773,17 @@ class Program {
             }
             if (e.IsInternal && !e.IsWrapped) e.IsUnsuppported = true;
 
-            if (e.IsUnsuppported) unsupported++;
+            if (e.IsUnsuppported && !e.IsInternal) unsupported++;
         });
 
-        const supported = func.filter(e => ((e.IsUnsuppported && e.IsInternal) == false)).length;
+        const supported = func.filter(e => (!e.IsUnsuppported)).length;
+        const funcLength = supported + unsupported;
 
         let coveragePercentage = Math.round(100 * (wrapped / (supported)));
         let notSupportedPercentage = Math.round(100 * (unsupported / (supported + unsupported)));
-        let wrappedPercentage = Math.round(100 * (wrapped / (func.length)));
+        let wrappedPercentage = Math.round(100 * (wrapped / (funcLength)));
 
-        if (func.length == 0) {
+        if (funcLength == 0) {
             coveragePercentage = 0;
             wrappedPercentage = 0;
             notSupportedPercentage = 0;
@@ -794,8 +794,8 @@ class Program {
             content += `- ![coverage](https://badgen.net/https/raw.githubusercontent.com/${Configuration.REPOSITORY_NAME}/main/extra/badges/coverage.json?icon=awesome)\n`;
         }
         content += `- ${wrapped} out of ${supported} supported API functions wrapped (**${coveragePercentage}% complete**)\n`;
-        content += `- ${wrapped} out of ${func.length} total API functions wrapped (*${wrappedPercentage}% complete*)\n`;
-        content += `- Note that ${unsupported} out of ${func.length} API functions are not supported (${notSupportedPercentage}%)\n`;
+        content += `- ${wrapped} out of ${funcLength} total API functions wrapped (*${wrappedPercentage}% complete*)\n`;
+        content += `- Note that ${unsupported} out of ${funcLength} API functions are not supported (${notSupportedPercentage}%)\n`;
         content += `\n`;
         content += "| Function | Wrapped | Link | Notes |\n";
         content += "| -------- | ------- | ---- | ----- |\n";
