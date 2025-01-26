@@ -1,22 +1,16 @@
 # ImGui_GM
 
-ImGui wrapper for modern GameMaker.
+An ImGui wrapper for modern GameMaker.
 
+![screenshot](https://user-images.githubusercontent.com/6483989/208770256-e568fec4-e8ba-4239-82b6-97acbb7f2160.png)
 ![issues](https://badgen.net/github/open-issues/nommiin/imgui_gm)
 ![coverage](https://badgen.net/https/raw.githubusercontent.com/nommiin/imgui_gm/main/extra/badges/coverage.json?icon=awesome)
 
 Check the [Wiki](https://github.com/nommiin/imgui_gm/wiki) for more info!
 
-# Features
-- Latest ImGui version
-- Great workflow for development
-  - Easily write wrappers for your desired ImGui extensions.
-  - Generate reports automatically on building.
-- Example included
-
 # Installation
 
-- Download the pre-built Windows packages for GameMaker from [Releases](https://github.com/nommiin/imgui_gm/releases).
+- Download the pre-built Windows packages for GameMaker from the [itch.io page](https://nommiiin.itch.io/imgui-gm).
 - Or you can [build](#building) the source code! See below.
 
 # Usage (GameMaker)
@@ -25,7 +19,7 @@ There are various ways to use the **ImGui_GM** extension. Below we will see the 
 
 ## Prerequisites
 
-1. Import ImGui_GM.yymps
+Download and import the .yymps file.
 
 ## Basic Usage
 
@@ -49,13 +43,15 @@ There are various ways to use the **ImGui_GM** extension. Below we will see the 
 Currently, this extension makes heavy usage of the ability to pass a device handler and context to extensions... unfortunately, this functionality **is only avaliable for [DX11 targets](https://manual.yoyogames.com/index.htm#t=GameMaker_Language%2FGML_Reference%2FOS_And_Compiler%2Fos_get_info.htm)**.
 
 # Coverage
+
 Check out [`ImGui_GM.gml`](https://github.com/nommiin/ImGui_GM/blob/main/scripts/ImGui/ImGui.gml) to view all wrapper functions.
 Check out [`COVERAGE.md`](https://github.com/nommiin/ImGui_GM/blob/main/COVERAGE.md) for coverage report.
 
 If there is anything missing, submit issues in this repository: [Click here to create an issue](https://github.com/nommiin/ImGui_GM/issues). 
 
 # Notes
-- Functions like `ImGui.Begin` may not return what you expect, see ["ImGuiReturnMask Usage"](https://github.com/nommiin/ImGui_GM/wiki/Usage#ImGuiReturnMask) for more info
+
+- Functions like `ImGui.Begin` may not return what you expect, see ["ImGuiReturnMask Usage"](https://github.com/nommiin/ImGui_GM/wiki/ImGuiReturnMask-Usage) for more info
 
 - Functions that accept an **array** of items as an argument (such as `ImGui.DragInt3`, `ImGui.SliderFloat2`, etc) will ***directly modify*** the given array. Keep this in mind when using them. Analogous functions that accept single elements (such as `ImGui.DrawInt`, `ImGui.SliderFloat`) ***will not*** make any changes directly to the value, and the return value should be used.
 
